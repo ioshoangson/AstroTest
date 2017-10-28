@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0902C73B0B37CBE85DF2FA15 /* Pods_AstroTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56773DE52DC510A9964125ED /* Pods_AstroTestTests.framework */; };
+		9ECB8F85EAF0754380F39357 /* Pods_AstroTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */; };
+		FA2138DF1FA44BFD00DE84AC /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */; };
+		FA2138E01FA44BFD00DE84AC /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */; };
+		FA2138E21FA4567400DE84AC /* FirebaseDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */; };
+		FA2138E41FA460E500DE84AC /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2138E31FA460E500DE84AC /* UserRequest.swift */; };
 		FA2ABCDF1FA3326E00326B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2ABCDE1FA3326E00326B50 /* AppDelegate.swift */; };
 		FA2ABCE41FA3326E00326B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2ABCE21FA3326E00326B50 /* Main.storyboard */; };
 		FA2ABCE61FA3326E00326B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2ABCE51FA3326E00326B50 /* Assets.xcassets */; };
@@ -63,6 +69,7 @@
 		FA60FB751FA3A537001EE5AA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA60FB6D1FA3A537001EE5AA /* Bolts.framework */; };
 		FA60FB761FA3A537001EE5AA /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */; };
 		FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */; };
+		FA9A4954A9EED41228503F98 /* Pods_AstroTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38934C9B2EB91DB400864BF3 /* Pods_AstroTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +90,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0AB9CC3A6759541BB34B38 /* Pods-AstroTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTestUITests/Pods-AstroTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		38934C9B2EB91DB400864BF3 /* Pods_AstroTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4082E0D2C422612FB3084429 /* Pods-AstroTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTestTests/Pods-AstroTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		56773DE52DC510A9964125ED /* Pods_AstroTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF85BC8CCEFE11BD6F521F1 /* Pods-AstroTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTestTests/Pods-AstroTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03C7D0B40CB947AB965D5F7 /* Pods-AstroTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTestUITests/Pods-AstroTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C664CF8F083F5294BD42AA60 /* Pods-AstroTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.release.xcconfig"; sourceTree = "<group>"; };
+		FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
+		FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
+		FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatamanager.swift; sourceTree = "<group>"; };
+		FA2138E31FA460E500DE84AC /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		FA2ABCDB1FA3326E00326B50 /* AstroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2ABCDE1FA3326E00326B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2ABCE31FA3326E00326B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +165,7 @@
 		FA60FB6D1FA3A537001EE5AA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB97DE668D8DB9348B908A93 /* Pods-AstroTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2138DF1FA44BFD00DE84AC /* FirebaseDatabase.framework in Frameworks */,
 				FA60FB691FA3A2F5001EE5AA /* FBSDKCoreKit.framework in Frameworks */,
 				FA60FB5C1FA39946001EE5AA /* SafariServices.framework in Frameworks */,
 				FA60FB731FA3A537001EE5AA /* AccountKit.framework in Frameworks */,
@@ -161,6 +182,8 @@
 				FA60FB5A1FA398C8001EE5AA /* GoogleSignInDependencies.framework in Frameworks */,
 				FA60FB591FA398C8001EE5AA /* GoogleSignIn.framework in Frameworks */,
 				FA60FB751FA3A537001EE5AA /* Bolts.framework in Frameworks */,
+				FA2138E01FA44BFD00DE84AC /* leveldb-library.framework in Frameworks */,
+				FA9A4954A9EED41228503F98 /* Pods_AstroTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0902C73B0B37CBE85DF2FA15 /* Pods_AstroTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,12 +199,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ECB8F85EAF0754380F39357 /* Pods_AstroTestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EFBD37605487B58AE32F24A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB97DE668D8DB9348B908A93 /* Pods-AstroTest.debug.xcconfig */,
+				C664CF8F083F5294BD42AA60 /* Pods-AstroTest.release.xcconfig */,
+				9AF85BC8CCEFE11BD6F521F1 /* Pods-AstroTestTests.debug.xcconfig */,
+				4082E0D2C422612FB3084429 /* Pods-AstroTestTests.release.xcconfig */,
+				C03C7D0B40CB947AB965D5F7 /* Pods-AstroTestUITests.debug.xcconfig */,
+				2C0AB9CC3A6759541BB34B38 /* Pods-AstroTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA2138DC1FA44BFD00DE84AC /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */,
+				FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		FA2ABCD21FA3326D00326B50 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +236,7 @@
 				FA2ABCFD1FA3326E00326B50 /* AstroTestUITests */,
 				FA2ABCDC1FA3326E00326B50 /* Products */,
 				FA5D4F301FA3915C00CA8809 /* Frameworks */,
+				9EFBD37605487B58AE32F24A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -412,6 +460,7 @@
 				FA2ABD441FA3373A00326B50 /* ChannelsRequest.swift */,
 				FA2ABD461FA3376600326B50 /* TVGuideRequest.swift */,
 				FA2ABD511FA338EC00326B50 /* Request.swift */,
+				FA2138E31FA460E500DE84AC /* UserRequest.swift */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -532,6 +581,7 @@
 				FA5D4F1C1FA3577C00CA8809 /* DataManager.swift */,
 				FA5D4F1E1FA358D400CA8809 /* LocalDataManager.swift */,
 				FA5D4F201FA358E200CA8809 /* AWSDataManager.swift */,
+				FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -548,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5D4F3C1FA393FC00CA8809 /* AstroTest-Bridging-Header.h */,
+				FA2138DC1FA44BFD00DE84AC /* Firebase */,
 				FA60FB661FA3A2C8001EE5AA /* FacebookSDK */,
 				FA60FB541FA398C8001EE5AA /* GoogleSignInSDK */,
 			);
@@ -559,6 +610,9 @@
 			children = (
 				FA5D4F331FA3916500CA8809 /* SystemConfiguration.framework */,
 				FA5D4F311FA3915C00CA8809 /* SafariServices.framework */,
+				38934C9B2EB91DB400864BF3 /* Pods_AstroTest.framework */,
+				56773DE52DC510A9964125ED /* Pods_AstroTestTests.framework */,
+				B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -593,9 +647,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2ABD031FA3326E00326B50 /* Build configuration list for PBXNativeTarget "AstroTest" */;
 			buildPhases = (
+				7508FCFC94820E2092F21719 /* [CP] Check Pods Manifest.lock */,
 				FA2ABCD71FA3326E00326B50 /* Sources */,
 				FA2ABCD81FA3326E00326B50 /* Frameworks */,
 				FA2ABCD91FA3326E00326B50 /* Resources */,
+				0C5FBC0344C7383FFA0C3B7A /* [CP] Embed Pods Frameworks */,
+				2C617E7B5B76B7A827E816AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -610,9 +667,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2ABD061FA3326E00326B50 /* Build configuration list for PBXNativeTarget "AstroTestTests" */;
 			buildPhases = (
+				4D0A56E8415373846A0A0247 /* [CP] Check Pods Manifest.lock */,
 				FA2ABCEB1FA3326E00326B50 /* Sources */,
 				FA2ABCEC1FA3326E00326B50 /* Frameworks */,
 				FA2ABCED1FA3326E00326B50 /* Resources */,
+				173F7E96053114D2E098B119 /* [CP] Embed Pods Frameworks */,
+				38CCD8BBDB44C69017348E73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -628,9 +688,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2ABD091FA3326E00326B50 /* Build configuration list for PBXNativeTarget "AstroTestUITests" */;
 			buildPhases = (
+				A88AB726203E88468CF8FEF7 /* [CP] Check Pods Manifest.lock */,
 				FA2ABCF61FA3326E00326B50 /* Sources */,
 				FA2ABCF71FA3326E00326B50 /* Frameworks */,
 				FA2ABCF81FA3326E00326B50 /* Resources */,
+				179A31D578E670B524A9ADC4 /* [CP] Embed Pods Frameworks */,
+				D0F4FCB9399959B78C425810 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -725,6 +788,158 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C5FBC0344C7383FFA0C3B7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		173F7E96053114D2E098B119 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTestTests/Pods-AstroTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		179A31D578E670B524A9ADC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTestUITests/Pods-AstroTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C617E7B5B76B7A827E816AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38CCD8BBDB44C69017348E73 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTestTests/Pods-AstroTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D0A56E8415373846A0A0247 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AstroTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7508FCFC94820E2092F21719 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AstroTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A88AB726203E88468CF8FEF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AstroTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0F4FCB9399959B78C425810 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AstroTestUITests/Pods-AstroTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA2ABCD71FA3326E00326B50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -750,8 +965,10 @@
 				FA5D4F1F1FA358D400CA8809 /* LocalDataManager.swift in Sources */,
 				FA5D4F1D1FA3577C00CA8809 /* DataManager.swift in Sources */,
 				FA2ABD431FA3370200326B50 /* API.swift in Sources */,
+				FA2138E41FA460E500DE84AC /* UserRequest.swift in Sources */,
 				FA2ABD191FA3347000326B50 /* BaseViewController.swift in Sources */,
 				FA2ABD2D1FA3357C00326B50 /* SlideMenuViewController.swift in Sources */,
+				FA2138E21FA4567400DE84AC /* FirebaseDatamanager.swift in Sources */,
 				FA2ABD5A1FA33A8500326B50 /* BaseCollectionViewCell.swift in Sources */,
 				FA2ABD4A1FA337D900326B50 /* BaseObject.swift in Sources */,
 				FA2ABD281FA3351B00326B50 /* DetailChannelViewController.swift in Sources */,
@@ -913,6 +1130,7 @@
 		};
 		FA2ABD041FA3326E00326B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB97DE668D8DB9348B908A93 /* Pods-AstroTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -920,6 +1138,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AstroTest/Libs/GoogleSignInSDK",
 					"$(PROJECT_DIR)/AstroTest/Libs/FacebookSDK",
+					"$(PROJECT_DIR)/AstroTest/Libs/Firebase",
 				);
 				INFOPLIST_FILE = AstroTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -937,6 +1156,7 @@
 		};
 		FA2ABD051FA3326E00326B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C664CF8F083F5294BD42AA60 /* Pods-AstroTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -944,6 +1164,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AstroTest/Libs/GoogleSignInSDK",
 					"$(PROJECT_DIR)/AstroTest/Libs/FacebookSDK",
+					"$(PROJECT_DIR)/AstroTest/Libs/Firebase",
 				);
 				INFOPLIST_FILE = AstroTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -960,6 +1181,7 @@
 		};
 		FA2ABD071FA3326E00326B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF85BC8CCEFE11BD6F521F1 /* Pods-AstroTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -974,6 +1196,7 @@
 		};
 		FA2ABD081FA3326E00326B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4082E0D2C422612FB3084429 /* Pods-AstroTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -988,6 +1211,7 @@
 		};
 		FA2ABD0A1FA3326E00326B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C03C7D0B40CB947AB965D5F7 /* Pods-AstroTestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AstroTestUITests/Info.plist;
@@ -1001,6 +1225,7 @@
 		};
 		FA2ABD0B1FA3326E00326B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0AB9CC3A6759541BB34B38 /* Pods-AstroTestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AstroTestUITests/Info.plist;

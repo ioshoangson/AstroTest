@@ -8,9 +8,9 @@
 
 import UIKit
 import FBSDKCoreKit
+import Firebase
 
 let kClientID = "157844766034-udj6jqhk31k88v9f3un004ocohogsqgf.apps.googleusercontent.com"
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,17 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+       // PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
        // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
         self.setupRootViewController()
         
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
+        
         // Initialize sign-in
         self.configGoogleSignInSDK()
         
-        
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     /*

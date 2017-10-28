@@ -19,4 +19,12 @@ class SortChannel: NSObject {
         return array.sorted { $0.channelTitle! < $1.channelTitle! }
     }
     
+    static public func sortByFavoriteAndChannelName(array: Array<Channel>) -> Array<Channel>{
+        return array.sorted { $0.channelTitle! < $1.channelTitle! && $0.isFavorites == true}
+    }
+    
+    static public func sortByFavoriteAndChannelNumber(array: Array<Channel>) -> Array<Channel>{
+        return array.sorted { $0.channelId! < $1.channelId! && $0.isFavorites == true}
+    }
+    
 }

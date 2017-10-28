@@ -14,6 +14,7 @@ class SlideMenuViewController: BaseViewController, GIDSignInUIDelegate {
     @IBOutlet weak var signInButton: GIDSignInButton!
     private(set) var channels = [Channel]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +38,8 @@ class SlideMenuViewController: BaseViewController, GIDSignInUIDelegate {
         view.addSubview(myLoginButton)
         
     }
+
+    
     
     // Once the button is clicked, show the login dialog
     @objc func loginButtonClicked() {
@@ -82,6 +85,10 @@ class SlideMenuViewController: BaseViewController, GIDSignInUIDelegate {
                 
             })
         }*/
+        
+        FirebaseDatamanager.shareInstance.getListFavoritesChannel { (data) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
