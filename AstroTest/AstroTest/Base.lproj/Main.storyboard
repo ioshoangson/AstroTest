@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LMo-4R-Lrj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m3O-bP-GpA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,40 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Slide Menu View Controller-->
-        <scene sceneID="xcz-PI-AsS">
+        <!--View Controller-->
+        <scene sceneID="bYG-JT-Lx9">
             <objects>
-                <viewController id="LMo-4R-Lrj" customClass="SlideMenuViewController" customModule="AstroTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m3O-bP-GpA" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cy8-ve-u8b"/>
-                        <viewControllerLayoutGuide type="bottom" id="RHm-VV-6zi"/>
+                        <viewControllerLayoutGuide type="top" id="IUK-SL-uGn"/>
+                        <viewControllerLayoutGuide type="bottom" id="rFf-MD-gCM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NFt-vu-1ES">
+                    <view key="view" contentMode="scaleToFill" id="sRs-Hf-leJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUr-jw-Wer" customClass="GIDSignInButton">
-                                <rect key="frame" x="67" y="517" width="240" height="66"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="yg2-xH-B6c"/>
-                                    <constraint firstAttribute="width" constant="240" id="z7I-Ra-S3F"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JUr-jw-Wer" firstAttribute="centerX" secondItem="NFt-vu-1ES" secondAttribute="centerX" id="Gym-BE-uqO"/>
-                            <constraint firstItem="RHm-VV-6zi" firstAttribute="top" secondItem="JUr-jw-Wer" secondAttribute="bottom" constant="84" id="dcI-gy-XrB"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="signInButton" destination="JUr-jw-Wer" id="0f1-Lb-yu7"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YEC-JE-0dY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCD-Tk-A0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-407.19999999999999" y="112.89355322338831"/>
         </scene>
     </scenes>
 </document>

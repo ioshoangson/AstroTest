@@ -7,67 +7,105 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-import FBSDKCoreKit
 
-class SlideMenuViewController: BaseViewController, GIDSignInUIDelegate {
-    @IBOutlet weak var signInButton: GIDSignInButton!
+let MARGIN_RIGHT: CGFloat = 100
+
+class SlideMenuViewController: BaseViewController {
+    
+    let ANIMATION_DURATION = 0.3
+    
     private(set) var channels = [Channel]()
-
+    
+    
+    private var tapGesture: UITapGestureRecognizer?
+    
+    private var menuViewController: UIViewController?
+    private var centerViewController: UIViewController?
+    
+    @IBOutlet weak private var containerView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        GIDSignIn.sharedInstance().uiDelegate = self
-        // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
+    }
+    
+    convenience init(menuViewController: UIViewController, centerViewController: UIViewController) {
+        self.init()
+        self.menuViewController = menuViewController
+        self.centerViewController = centerViewController
+    }
+    
+    override func setupUI() {
+        super.setupUI()
         
-        // TODO(developer) Configure the sign-in button look/feel
-        
-        // Add a custom login button to your app
-        let myLoginButton = UIButton(type: .custom)
-        myLoginButton.backgroundColor = UIColor.gray
-        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40);
-        myLoginButton.center = view.center;
-        myLoginButton.setTitle("Facebook", for: .normal)
-        
-        // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
-        
-        // Add the button to the view
-        view.addSubview(myLoginButton)
-        
+        self.addMenuViewController()
+        self.addCenterViewController(controller: self.centerViewController!)
+    }
+    
+    private func addMenuViewController() {
+        self.addChildViewController(self.menuViewController!)
+        let menuViewFrame  = self.containerView?.frame
+        self.menuViewController?.view.frame = menuViewFrame!
+        self.containerView?.addSubview((self.menuViewController?.view)!)
+        self.menuViewController?.didMove(toParentViewController: self)
     }
 
+    private func addCenterViewController(controller: UIViewController) {
+        self.centerViewController = controller
+        self.addChildViewController(controller)
+        let centerViewFrame  = self.containerView?.frame
+        controller.view.frame = centerViewFrame!
+        self.containerView?.addSubview((self.centerViewController?.view)!)
+        controller.didMove(toParentViewController: self)
+    }
     
     
-    // Once the button is clicked, show the login dialog
-    @objc func loginButtonClicked() {
-        //let loginManager = FBSDKLoginManager()
-        /*
-        loginManager.logIn([ .PublicProfile ], viewController: self) { loginResult in
-            switch loginResult {
-            case .Failed(let error):
-                print(error)
-            case .Cancelled:
-                print("User cancelled login.")
-            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Logged in!")
+    override func showMenu() {
+        self.animationMenuView(isShow: self.isShowAnimation())
+    }
+    
+    private func animationMenuView(isShow: Bool) {
+        if isShow {
+            UIView.animate(withDuration: ANIMATION_DURATION) {
+                self.centerViewController?.view.frame  = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT))
             }
-        }*/
-        
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if fbloginresult.grantedPermissions != nil {
-                    if(fbloginresult.grantedPermissions.contains("email"))
-                    {
-                        fbLoginManager.logOut()
-                    }
-                }
+            self.removeTapGesture()
+        }else {
+            UIView.animate(withDuration: ANIMATION_DURATION) {
+                self.centerViewController?.view.frame  = CGRect(origin: CGPoint(x: Constants.SCREEN_WIDTH - MARGIN_RIGHT, y: 0), size: CGSize(width: Constants.SCREEN_WIDTH, height: Constants.SCREEN_HEIGHT))
             }
+            self.addTapGesture()
         }
+ 
+    }
+    
+    private func addTapGesture() {
+        if self.tapGesture == nil {
+            self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.showMenu))
+            self.centerViewController?.view.addGestureRecognizer(self.tapGesture!)
+        }
+    }
+    
+    private func removeTapGesture() {
+        if self.tapGesture != nil {
+            self.centerViewController?.view.removeGestureRecognizer(self.tapGesture!)
+            self.tapGesture = nil
+        }
+    }
+    
+    
+    private func isShowAnimation() -> Bool {
+        return Int((self.centerViewController?.view.frame.origin.x)!) != 0
+    }
+    
+    public func setCenterViewController(controller: UIViewController) {
+        self.removeViewControllerFromParent(controller: self.centerViewController!)
+        self.addCenterViewController(controller: controller)
+    }
+    
+    private func removeViewControllerFromParent(controller: UIViewController) {
+        controller.willMove(toParentViewController: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParentViewController()
     }
     
     override func initData() {
@@ -96,30 +134,8 @@ class SlideMenuViewController: BaseViewController, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
-    // UIViewController.
-    
-    // Stop the UIActivityIndicatorView animation that was started when the user
-    // pressed the Sign In button
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        
+    public func toogleMenu(){
+        self.showMenu()
     }
-    
-    // Present a view that prompts the user to sign in with Google
-    func sign(_ signIn: GIDSignIn!,
-              present viewController: UIViewController!) {
-        self.present(viewController, animated: true, completion: nil)
-    }
-    
-    // Dismiss the "Sign in with Google" view
-    func sign(_ signIn: GIDSignIn!,
-              dismiss viewController: UIViewController!) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func didTapSignOut(sender: AnyObject) {
-        GIDSignIn.sharedInstance().signOut()
-    }
-    
 }
+

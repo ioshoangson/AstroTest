@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class Application: NSObject {
     
     static let shareInstance = Application()
     var listChannelsId: Array<String>?
     
+    public func isLogin() -> Bool {
+        return (FBSDKAccessToken.current() != nil) ||  (GIDSignIn.sharedInstance().currentUser != nil)
+    }
 }
 

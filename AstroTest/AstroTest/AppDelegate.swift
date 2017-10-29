@@ -13,69 +13,23 @@ import Firebase
 let kClientID = "157844766034-udj6jqhk31k88v9f3un004ocohogsqgf.apps.googleusercontent.com"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-       // PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
-       // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        FirebaseApp.configure()
+
+        self.configGoogleSignInSDK()
         
         self.setupRootViewController()
-        
-        // Use Firebase library to configure APIs
-        FirebaseApp.configure()
-        
-        
-        // Initialize sign-in
-        self.configGoogleSignInSDK()
+
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    /*
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
-     
-     if ([FBSDKAccessToken currentAccessToken]) {
-     // User is logged in, do work such as go to next view controller.
-     }
-     
-    */
-    
-    
-    /*
-    //  AppDelegate.m
-    #import <FBSDKCoreKit/FBSDKCoreKit.h>
-    
-    - (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [[FBSDKApplicationDelegate sharedInstance] application:application
-    didFinishLaunchingWithOptions:launchOptions];
-    // Add any custom logic here.
-    return YES;
-    }
-    
-    - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-    sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    
-    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
-    openURL:url
-    sourceApplication:sourceApplication
-    annotation:annotation
-    ];
-    // Add any custom logic here.
-    return handled;
-    } 
-    */
-    
-
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -98,15 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    /*
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                        sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                        annotation: [:])
-    }
-    */
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         let sourceApplication =  options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
         let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
@@ -128,21 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     
     //MARK:
-    //MARK: - Google Sigin Delegate
-    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            
-        } else {
-            print("\(error.localizedDescription)")
-        }
-    }
-    
-    
-
-    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
-    }
-    
+    //MARK: - Private Methods
     private func configGoogleSignInSDK() {
         GIDSignIn.sharedInstance().clientID = kClientID
         GIDSignIn.sharedInstance().delegate = self
@@ -154,10 +85,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
     private func setupRootViewController() {
-       // self.window = UIWindow(frame: UIScreen.main.bounds)
-       // let slideMenuViewController = SlideMenuViewController()
-       // self.window?.rootViewController = slideMenuViewController
-        //self.window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+        let slideMenuViewController = SlideMenuViewController(menuViewController: MenuViewController(), centerViewController: homeNavigationController)
+        self.window?.rootViewController = slideMenuViewController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    public func setupLoginViewController() {
+        
     }
 }
 
+
+extension AppDelegate: GIDSignInDelegate {
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
+}

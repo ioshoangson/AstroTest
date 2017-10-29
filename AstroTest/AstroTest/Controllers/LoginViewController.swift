@@ -7,13 +7,43 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
+
+enum LoginTypes {
+    case facebook
+    case google
+}
+
+protocol LoginDelegate: class {
+    func loginSuccess(loginViewController: BaseViewController, loginType: LoginTypes)
+}
 
 class LoginViewController: BaseViewController {
-
+    @IBOutlet weak var googleButton: GIDSignInButton!
+    @IBOutlet weak var facbookButton: UIButton?
+    
+    public weak var delegate: LoginDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        self.registerNotification()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
+    }
+    
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +51,46 @@ class LoginViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginButtonClicked(sender: AnyObject) {
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                if (self.delegate != nil) {
+                    self.delegate?.loginSuccess(loginViewController: self, loginType: .facebook)
+                }
+                
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil {
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                       // fbLoginManager.logOut()
+                    }
+                }
+            }
+        }
     }
-    */
+    
+    
+    @objc private func handleNotification() {
+        if (self.delegate != nil) {
+            self.delegate?.loginSuccess(loginViewController: self, loginType: .google)
+        }
+    }
+}
 
+
+extension LoginViewController: GIDSignInUIDelegate {
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

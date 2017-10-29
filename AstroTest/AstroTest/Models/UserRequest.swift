@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class UserRequest: NSObject {
     
@@ -16,6 +17,9 @@ class UserRequest: NSObject {
     
     public func logout(completion: CompletionBlock) {
         DispatchQueue.main.async {
+            FBSDKLoginManager().logOut()
+            GIDSignIn.sharedInstance().signOut()
+
             LocalDataManager.shareInstance.removeListFavoritesChannel()
             FirebaseDatamanager.shareInstance.removeListFavoritesChannel()
             FirebaseDatamanager.shareInstance.removeSortChannelBy()

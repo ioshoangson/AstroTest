@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="AstroTest" customModuleProvider="target">
             <connections>
+                <outlet property="menuContentView" destination="BF1-sr-QSq" id="NDw-6G-7si"/>
+                <outlet property="menuFooter" destination="wpp-Nt-XWj" id="6hG-fO-EUF"/>
+                <outlet property="menuHeader" destination="gVe-U8-HCj" id="Ce0-Um-oOZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +21,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-U8-HCj" customClass="MenuHeader" customModule="AstroTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="kt4-os-a0a"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BF1-sr-QSq" customClass="MenuContentView" customModule="AstroTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="120" width="375" height="427"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-n2-ONf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="BF1-sr-QSq" id="WSY-mH-6ZH"/>
+                                <outlet property="delegate" destination="BF1-sr-QSq" id="pG4-HI-hX3"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="uuD-n2-ONf" firstAttribute="leading" secondItem="BF1-sr-QSq" secondAttribute="leading" id="8zd-Qj-c40"/>
+                        <constraint firstAttribute="bottom" secondItem="uuD-n2-ONf" secondAttribute="bottom" id="Gb3-uw-8aq"/>
+                        <constraint firstItem="uuD-n2-ONf" firstAttribute="top" secondItem="BF1-sr-QSq" secondAttribute="top" id="ZSn-J6-pla"/>
+                        <constraint firstAttribute="trailing" secondItem="uuD-n2-ONf" secondAttribute="trailing" id="mhn-0a-bOc"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="contentTableView" destination="uuD-n2-ONf" id="BC7-W4-tku"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpp-Nt-XWj" customClass="MenuFooterView" customModule="AstroTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="547" width="375" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="gVe-U8-HCj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lk7-ab-aST"/>
+                <constraint firstItem="wpp-Nt-XWj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NHa-rQ-Ma4"/>
+                <constraint firstItem="gVe-U8-HCj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OQc-Ic-SKz"/>
+                <constraint firstItem="wpp-Nt-XWj" firstAttribute="top" secondItem="BF1-sr-QSq" secondAttribute="bottom" id="OWH-SG-6DA"/>
+                <constraint firstItem="BF1-sr-QSq" firstAttribute="top" secondItem="gVe-U8-HCj" secondAttribute="bottom" id="Rkb-zA-JXb"/>
+                <constraint firstAttribute="trailing" secondItem="BF1-sr-QSq" secondAttribute="trailing" id="Wz4-5N-TJe"/>
+                <constraint firstAttribute="trailing" secondItem="gVe-U8-HCj" secondAttribute="trailing" id="ZV7-9K-sFR"/>
+                <constraint firstAttribute="trailing" secondItem="wpp-Nt-XWj" secondAttribute="trailing" id="i9M-gk-ypw"/>
+                <constraint firstItem="BF1-sr-QSq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lEH-P8-orb"/>
+                <constraint firstAttribute="bottom" secondItem="BF1-sr-QSq" secondAttribute="bottom" constant="120" id="y3A-Xc-McC"/>
+                <constraint firstAttribute="bottom" secondItem="wpp-Nt-XWj" secondAttribute="bottom" id="zVn-cB-lFZ"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
 </document>

@@ -59,6 +59,8 @@ class ChannelsRequest: NSObject {
                                   channelTitle: channelDict["channelTitle"] as! String,
                                   isFavorites: false)            
             listChannelsId.append(String(describing: channel.channelId!))
+            let isFavorites = LocalDataManager.shareInstance.checkChannelExists(channel: channel)
+            channel.setFavorite(isFavorites: isFavorites)
             results.append(channel)
         }
         

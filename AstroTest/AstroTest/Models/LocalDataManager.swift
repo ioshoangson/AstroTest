@@ -11,8 +11,8 @@ import UIKit
 class LocalDataManager: DataManager {
     static let shareInstance = LocalDataManager()
     
-    public override func storeFavoritesChannel(channel: AnyObject) {
-        let data = self.encodeData(data: channel)
+    public override func storeFavoritesChannels(channels: AnyObject) {
+        let data = self.encodeData(data: channels)
         self.saveDataToLocalWithKey(data: data, key: FAVORITES)
     }
     
@@ -25,4 +25,21 @@ class LocalDataManager: DataManager {
         self.removeLocalStorageWithKey(key: FAVORITES)
     }
     
+    
+    public func removeChannel(channel: Channel) {
+        var favories = self.getListFavoritesChannel() as? Array<Channel>
+        if self.checkChannelExists(channel: channel) {
+            favories = favories?.filter { $0.channelId != channel.channelId }
+        }
+        self.storeFavoritesChannels(channels: favories as AnyObject)
+    }
+    
+    
+    public func checkChannelExists(channel: Channel) -> Bool {
+        let favories = self.getListFavoritesChannel() as? Array<Channel>
+        if favories != nil && (favories?.count)! > 0 {
+            return (favories?.contains(where: { $0.channelId == channel.channelId }))!
+        }
+        return false
+    }
 }

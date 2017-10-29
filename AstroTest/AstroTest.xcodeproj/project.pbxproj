@@ -70,6 +70,18 @@
 		FA60FB761FA3A537001EE5AA /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */; };
 		FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */; };
 		FA9A4954A9EED41228503F98 /* Pods_AstroTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38934C9B2EB91DB400864BF3 /* Pods_AstroTest.framework */; };
+		FAB5AFFC1FA56AED00E74358 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AFFB1FA56AED00E74358 /* MenuTableViewCell.swift */; };
+		FAB5AFFE1FA56AF900E74358 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5AFFD1FA56AF900E74358 /* MenuTableViewCell.xib */; };
+		FAB5B0021FA56B3E00E74358 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B0011FA56B3E00E74358 /* MenuFooterView.swift */; };
+		FAB5B0041FA56B4800E74358 /* MenuFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B0031FA56B4800E74358 /* MenuFooterView.xib */; };
+		FAB5B0061FA56B5600E74358 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B0051FA56B5600E74358 /* MenuHeader.swift */; };
+		FAB5B0081FA56B6000E74358 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B0071FA56B6000E74358 /* MenuHeader.xib */; };
+		FAB5B00B1FA56C7100E74358 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B00A1FA56C7100E74358 /* Menu.swift */; };
+		FAB5B00D1FA57B7B00E74358 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B00C1FA57B7B00E74358 /* ChannelTableViewCell.xib */; };
+		FAB5B0101FA598F500E74358 /* FavoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B00F1FA598F500E74358 /* FavoriesCollectionViewCell.swift */; };
+		FAB5B0121FA598FD00E74358 /* FavoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B0111FA598FD00E74358 /* FavoriesCollectionViewCell.xib */; };
+		FAB742601FA4CE35009C65E9 /* SlideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB7425F1FA4CE35009C65E9 /* SlideMenuViewController.xib */; };
+		FAB742661FA4DE87009C65E9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB742651FA4DE87009C65E9 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +177,18 @@
 		FA60FB6D1FA3A537001EE5AA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAB5AFFB1FA56AED00E74358 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		FAB5AFFD1FA56AF900E74358 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		FAB5B0011FA56B3E00E74358 /* MenuFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
+		FAB5B0031FA56B4800E74358 /* MenuFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuFooterView.xib; sourceTree = "<group>"; };
+		FAB5B0051FA56B5600E74358 /* MenuHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		FAB5B0071FA56B6000E74358 /* MenuHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuHeader.xib; sourceTree = "<group>"; };
+		FAB5B00A1FA56C7100E74358 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		FAB5B00C1FA57B7B00E74358 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
+		FAB5B00F1FA598F500E74358 /* FavoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAB5B0111FA598FD00E74358 /* FavoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAB7425F1FA4CE35009C65E9 /* SlideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuViewController.xib; sourceTree = "<group>"; };
+		FAB742651FA4DE87009C65E9 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		FB97DE668D8DB9348B908A93 /* Pods-AstroTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +280,7 @@
 				FA2ABD3A1FA3361900326B50 /* Application */,
 				FA2ABD0C1FA332D800326B50 /* Controllers */,
 				FA2ABD371FA3360800326B50 /* Constants */,
+				FAB742641FA4DE87009C65E9 /* Extension */,
 				FA2ABD341FA335EE00326B50 /* Utils */,
 				FA2ABD0D1FA332D800326B50 /* Models */,
 				FA5D4F281FA3911B00CA8809 /* Libs */,
@@ -305,6 +330,7 @@
 			children = (
 				FA2ABD481FA337CF00326B50 /* Base */,
 				FA5D4F181FA3536200CA8809 /* Channel */,
+				FAB5B0091FA56C5B00E74358 /* Menu */,
 				FA5D4F1B1FA3571800CA8809 /* DataManager */,
 				FA5D4F231FA38A7C00CA8809 /* FilterSort */,
 				FA2ABD3D1FA3366600326B50 /* Request */,
@@ -351,8 +377,10 @@
 		FA2ABD121FA3335900326B50 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FA2ABD1E1FA3349A00326B50 /* MenuViewController.swift */,
-				FA2ABD1F1FA3349A00326B50 /* MenuViewController.xib */,
+				FAB5AFF91FA56ABD00E74358 /* Base */,
+				FAB5AFFA1FA56AC700E74358 /* Cell */,
+				FAB5AFFF1FA56B0300E74358 /* Footer */,
+				FAB5B0001FA56B0F00E74358 /* Header */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -406,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2ABD2B1FA3357C00326B50 /* SlideMenuViewController.swift */,
+				FAB7425F1FA4CE35009C65E9 /* SlideMenuViewController.xib */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -511,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2ABD561FA33A5D00326B50 /* Base */,
+				FAB5B00E1FA598D500E74358 /* Favorites */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -563,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2ABD731FA3416800326B50 /* ChannelTableViewCell.swift */,
+				FAB5B00C1FA57B7B00E74358 /* ChannelTableViewCell.xib */,
 			);
 			name = Channel;
 			sourceTree = "<group>";
@@ -638,6 +669,67 @@
 				FA60FB681FA3A2F5001EE5AA /* FBSDKLoginKit.framework */,
 			);
 			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		FAB5AFF91FA56ABD00E74358 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA2ABD1E1FA3349A00326B50 /* MenuViewController.swift */,
+				FA2ABD1F1FA3349A00326B50 /* MenuViewController.xib */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		FAB5AFFA1FA56AC700E74358 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5AFFB1FA56AED00E74358 /* MenuTableViewCell.swift */,
+				FAB5AFFD1FA56AF900E74358 /* MenuTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		FAB5AFFF1FA56B0300E74358 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5B0011FA56B3E00E74358 /* MenuFooterView.swift */,
+				FAB5B0031FA56B4800E74358 /* MenuFooterView.xib */,
+			);
+			name = Footer;
+			sourceTree = "<group>";
+		};
+		FAB5B0001FA56B0F00E74358 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5B0051FA56B5600E74358 /* MenuHeader.swift */,
+				FAB5B0071FA56B6000E74358 /* MenuHeader.xib */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		FAB5B0091FA56C5B00E74358 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5B00A1FA56C7100E74358 /* Menu.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		FAB5B00E1FA598D500E74358 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FAB5B00F1FA598F500E74358 /* FavoriesCollectionViewCell.swift */,
+				FAB5B0111FA598FD00E74358 /* FavoriesCollectionViewCell.xib */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		FAB742641FA4DE87009C65E9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAB742651FA4DE87009C65E9 /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -765,8 +857,14 @@
 				FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */,
 				FA2ABD251FA3350C00326B50 /* ChannelsListViewController.xib in Resources */,
 				FA2ABD211FA3349A00326B50 /* MenuViewController.xib in Resources */,
+				FAB5AFFE1FA56AF900E74358 /* MenuTableViewCell.xib in Resources */,
+				FAB5B0121FA598FD00E74358 /* FavoriesCollectionViewCell.xib in Resources */,
 				FA2ABCE41FA3326E00326B50 /* Main.storyboard in Resources */,
 				FA2ABD1D1FA3348D00326B50 /* HomeViewController.xib in Resources */,
+				FAB5B0041FA56B4800E74358 /* MenuFooterView.xib in Resources */,
+				FAB742601FA4CE35009C65E9 /* SlideMenuViewController.xib in Resources */,
+				FAB5B0081FA56B6000E74358 /* MenuHeader.xib in Resources */,
+				FAB5B00D1FA57B7B00E74358 /* ChannelTableViewCell.xib in Resources */,
 				FA60FB741FA3A537001EE5AA /* AccountKitStrings.bundle in Resources */,
 				FA2ABD331FA335B300326B50 /* LoginViewController.xib in Resources */,
 			);
@@ -945,6 +1043,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB5B0021FA56B3E00E74358 /* MenuFooterView.swift in Sources */,
 				FA2ABD4C1FA337F300326B50 /* RequestDetail.swift in Sources */,
 				FA5D4F1A1FA3537700CA8809 /* Channel.swift in Sources */,
 				FA2ABD741FA3416800326B50 /* ChannelTableViewCell.swift in Sources */,
@@ -956,8 +1055,12 @@
 				FA2ABD451FA3373A00326B50 /* ChannelsRequest.swift in Sources */,
 				FA2ABD6D1FA33BF100326B50 /* BaseTableView.swift in Sources */,
 				FA2ABD581FA33A7100326B50 /* BaseTableViewCell.swift in Sources */,
+				FAB5B0101FA598F500E74358 /* FavoriesCollectionViewCell.swift in Sources */,
 				FA2ABD321FA335B300326B50 /* LoginViewController.swift in Sources */,
+				FAB5AFFC1FA56AED00E74358 /* MenuTableViewCell.swift in Sources */,
 				FA2ABD391FA3361600326B50 /* Constants.swift in Sources */,
+				FAB742661FA4DE87009C65E9 /* UIViewController.swift in Sources */,
+				FAB5B00B1FA56C7100E74358 /* Menu.swift in Sources */,
 				FA2ABD241FA3350C00326B50 /* ChannelsListViewController.swift in Sources */,
 				FA2ABD201FA3349A00326B50 /* MenuViewController.swift in Sources */,
 				FA2ABCDF1FA3326E00326B50 /* AppDelegate.swift in Sources */,
@@ -975,6 +1078,7 @@
 				FA5D4F271FA38ADD00CA8809 /* SortChannel.swift in Sources */,
 				FA2ABD1C1FA3348D00326B50 /* HomeViewController.swift in Sources */,
 				FA2ABD5D1FA33AF800326B50 /* BaseView.swift in Sources */,
+				FAB5B0061FA56B5600E74358 /* MenuHeader.swift in Sources */,
 				FA5D4F211FA358E200CA8809 /* AWSDataManager.swift in Sources */,
 				FA2ABD6F1FA33C0700326B50 /* ConfigTableView.swift in Sources */,
 				FA2ABD521FA338EC00326B50 /* Request.swift in Sources */,

@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 enum SortChannelBy: String {
     case number = "number"
-    case alphabet = "alphabet"
+    case name = "name"
 }
 
 class FirebaseDatamanager: DataManager {
@@ -20,7 +20,6 @@ class FirebaseDatamanager: DataManager {
     
     public typealias CompletionBlock = (AnyObject) -> Void
 
-    
     private var ref: DatabaseReference!
 
     override init() {
@@ -28,8 +27,8 @@ class FirebaseDatamanager: DataManager {
         self.ref = Database.database().reference()
     }
     
-    override func storeFavoritesChannel(channel: AnyObject) {
-        let dict = ChannelParams.channelToJSON(channel: channel as! Channel)
+    override func storeFavoritesChannels(channels: AnyObject) {
+        let dict = ChannelParams.channelToJSON(channel: channels as! Channel)
         self.ref.child(FAVORITES).childByAutoId().setValue(dict)
     }
     

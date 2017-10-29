@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HCC-mr-0Zx" customClass="ChannelTableViewCell" customModule="AstroTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCC-mr-0Zx" id="wuQ-TQ-Xza">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVQ-pF-19P">
+                        <rect key="frame" x="15" y="11" width="285" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="v6i-xt-fl0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fav_black_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kHb-F6-Xf7">
+                        <rect key="frame" x="344" y="14" width="16" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="R29-Zp-OqH"/>
+                            <constraint firstAttribute="height" constant="14" id="rpY-8r-DmS"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkI-pT-laW">
+                        <rect key="frame" x="314" y="0.0" width="61" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="RZ4-TB-Tze"/>
+                        </constraints>
+                        <connections>
+                            <action selector="favoritesActionWithSender:" destination="HCC-mr-0Zx" eventType="touchUpInside" id="BDe-Yz-1mq"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="fVQ-pF-19P" secondAttribute="trailing" constant="75" id="05y-q8-1sn"/>
+                    <constraint firstItem="kHb-F6-Xf7" firstAttribute="centerY" secondItem="wuQ-TQ-Xza" secondAttribute="centerY" id="5gp-xQ-YRb"/>
+                    <constraint firstItem="fVQ-pF-19P" firstAttribute="leading" secondItem="wuQ-TQ-Xza" secondAttribute="leading" constant="15" id="9fQ-mz-QFw"/>
+                    <constraint firstAttribute="trailing" secondItem="bkI-pT-laW" secondAttribute="trailing" id="Fu9-NB-4hA"/>
+                    <constraint firstAttribute="bottom" secondItem="bkI-pT-laW" secondAttribute="bottom" id="dbe-tR-pWO"/>
+                    <constraint firstAttribute="trailing" secondItem="kHb-F6-Xf7" secondAttribute="trailing" constant="15" id="ezj-dO-P14"/>
+                    <constraint firstItem="bkI-pT-laW" firstAttribute="top" secondItem="wuQ-TQ-Xza" secondAttribute="top" id="oiC-Lv-TLh"/>
+                    <constraint firstItem="fVQ-pF-19P" firstAttribute="centerY" secondItem="wuQ-TQ-Xza" secondAttribute="centerY" id="vcN-J6-nZY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="channelTitle" destination="fVQ-pF-19P" id="xrh-HZ-mGI"/>
+                <outlet property="favoritesImageView" destination="kHb-F6-Xf7" id="71k-VT-YWS"/>
+            </connections>
+            <point key="canvasLocation" x="-115.5" y="52"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="fav_black_icon" width="16" height="14"/>
+    </resources>
+</document>

@@ -40,7 +40,7 @@ class DataManager: BaseObject {
     }
     
     
-    public func storeFavoritesChannel(channel: AnyObject) {
+    public func storeFavoritesChannels(channels: AnyObject) {
         
     }
     
