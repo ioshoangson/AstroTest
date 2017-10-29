@@ -19,7 +19,7 @@ class TVGuideRequest: NSObject {
                                              periodEnd: String,
                                              completion: @escaping CompletionBlock) {
         let requestDetail = RequestDetail.init(baseURL: API.SERVER_PRODUCT_URL, path: API.CURRENT_SHOW, requestMethod: .GET)
-        requestDetail.params = TVGuideParams.channelDetail(channelId: channelId, periodStart: periodStart, periodEnd: periodEnd, isLive: true)
+        requestDetail.params = TVGuideParams.channelDetail(channelId: channelId, periodStart: periodStart, periodEnd: periodEnd, isLive: false)
         let urlRequest = requestDetail.urlRequest
         
         Request.shareInstance.requestWithGETMethod(request: urlRequest!) { (success, data) in
@@ -37,7 +37,9 @@ class TVGuideRequest: NSObject {
         for item in dict {
             let tvGuideDict = item as! Dictionary<String, AnyObject>
             let tvGuide = TVGuide(jsonData: tvGuideDict as NSDictionary)
-            results.append(tvGuide)
+            if tvGuide.isOnNow! {
+                results.append(tvGuide)
+            }
         }
         return results as AnyObject
     }

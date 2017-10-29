@@ -19,6 +19,7 @@ class TVGuide: BaseObject {
     private(set) var subGenre: String?
     private(set) var live: Bool?
     private(set) var eventID: Int?
+    private(set) var isOnNow: Bool?
     
     override func parseData() {
         self.channel = Channel(channelId: self.jsonData?["channelId"] as! Int,
@@ -35,14 +36,38 @@ class TVGuide: BaseObject {
         self.shortSynopsis = self.jsonData?["shortSynopsis"] as? String
         self.live = self.jsonData?["live"] as? Bool
         self.eventID = self.jsonData?["eventID"] as? Int
+        self.isOnNow = self.showOnNow()
     }
     
     public func getLocalTimeFromUTC() -> String{
         return Utils.UTCToLocal(date: self.displayDateTimeUtc!)
     }
     
-    public func isOnShowOnNow() -> Bool {
-        return true
+    private func showOnNow() -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
+        let startShowDate = dateFormatter.date(from: self.displayDateTime!)
+        
+        
+        let calendar = NSCalendar.autoupdatingCurrent
+        let durations = self.displayDuration?.components(separatedBy: ":")
+        let hour = Int((durations?.first)!)
+        let minute = Int((durations?[1])!)
+        var endShowDate = calendar.date(byAdding: .hour, value: hour!, to: startShowDate!)
+        endShowDate = calendar.date(byAdding: .minute, value: minute!, to: startShowDate!)
+
+        let date = Date()
+
+        print(Utils.getStringFromDate(date: startShowDate!))
+        print(Utils.getStringFromDate(date: endShowDate!))
+        print(Utils.getStringFromDate(date: date))
+        
+        return Utils.isBetweenDates(date: date, beginDate: startShowDate!, endDate: endShowDate!)
+    }
+    
+    
+    public func getDisplayTime() -> String {
+        return (self.displayDateTime?.components(separatedBy: " ").last)!
     }
 }
 

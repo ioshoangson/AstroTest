@@ -46,12 +46,25 @@ class Utils: NSObject {
     
     static func UTCToLocal(date:String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-DD HH:mm:ss.s"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         let dt = dateFormatter.date(from: date)
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.string(from: dt!)
+    }
+    
+ 
+    
+    static func isBetweenDates(date:Date, beginDate: Date, endDate: Date) -> Bool{
+        if date.compare(beginDate) == .orderedAscending{
+            return false
+        }
+        
+        if date.compare(endDate) == .orderedDescending{
+            return false
+        }
+        return true
     }
 }

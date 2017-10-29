@@ -21,8 +21,7 @@ class TVGuideCollectionViewCell: BaseCollectionViewCell {
         let tvGuide = data as? TVGuide
         self.programmeTitleLabel?.text = tvGuide?.programmeTitle
         self.genreLabel?.text = tvGuide?.genre
-        self.displayDateTimeLabel?.text = tvGuide?.getLocalTimeFromUTC()
+        self.displayDateTimeLabel?.text = tvGuide?.getDisplayTime()
         self.displayDurationLabel?.text = tvGuide?.displayDuration
-        self.onNowView?.isHidden = !(tvGuide?.isOnShowOnNow())!
     }
 }

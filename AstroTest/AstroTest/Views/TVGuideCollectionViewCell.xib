@@ -45,9 +45,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZp-ac-417">
                         <rect key="frame" x="128" y="126" width="48" height="33"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-3m-UbI">
-                                <rect key="frame" x="6" y="6" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-3m-UbI">
+                                <rect key="frame" x="3.5" y="6" width="41" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="Wjp-eO-7Ls"/>
+                                    <constraint firstAttribute="height" constant="21" id="p3d-KF-4MK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,8 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="B0G-3m-UbI" firstAttribute="centerY" secondItem="xZp-ac-417" secondAttribute="centerY" id="OUp-C0-jDo"/>
                             <constraint firstAttribute="height" constant="33" id="alQ-eL-dCb"/>
                             <constraint firstAttribute="width" constant="48" id="cN0-je-dnf"/>
+                            <constraint firstItem="B0G-3m-UbI" firstAttribute="centerX" secondItem="xZp-ac-417" secondAttribute="centerX" id="sF0-wR-Opw"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -83,7 +88,7 @@
                 <outlet property="displayDateTimeLabel" destination="Z5u-QG-SiN" id="mA8-hi-Itf"/>
                 <outlet property="displayDurationLabel" destination="8fG-uw-Ced" id="mn5-3c-Egb"/>
                 <outlet property="genreLabel" destination="8z0-EE-JAn" id="rML-yo-LnP"/>
-                <outlet property="onNowView" destination="B0G-3m-UbI" id="ibp-5m-qQR"/>
+                <outlet property="onNowView" destination="xZp-ac-417" id="uyD-d9-RXd"/>
                 <outlet property="programmeTitleLabel" destination="CmL-wS-mHm" id="XKb-dw-WWd"/>
             </connections>
             <point key="canvasLocation" x="-42" y="106.5"/>
