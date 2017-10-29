@@ -55,7 +55,10 @@ class ChannelsListViewController: BaseViewController {
     
     
     override func initData() {
+        
+        self.addLoadingView()
         ChannelsRequest.shareInstance.getListChannel(context: self) { (success, data) in
+            self.removeLoadingView()
             if(success) {
                 self.channels = data as! [Channel]
                 self.channelsListContentView?.setDataSource(dataSource: self.channels as AnyObject)

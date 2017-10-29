@@ -71,6 +71,30 @@ class BaseViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = menuButton
     }
     
+    public func addLoadingView(){
+        let loadingView: UIView = (Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)?.first as? LoadingView)!
+        loadingView.center = self.view.center
+        loadingView.alpha = 0
+        self.view.addSubview(loadingView)
+        
+        UIView.animate(withDuration: 0.3) {
+            loadingView.alpha = 0.7
+        }
+    }
+    
+    public func removeLoadingView(){
+        let subViews = self.view.subviews
+        for subView in subViews {
+            if subView is LoadingView {
+                UIView.animate(withDuration: 0.3, animations: {
+                    subView.alpha = 0
+                }, completion: { (success) in
+                    subView.removeFromSuperview()
+                })
+            }
+        }
+    }
+    
     //MARK:
     //MARK: - Private Methods
     

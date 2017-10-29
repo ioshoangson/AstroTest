@@ -69,6 +69,8 @@
 		FA60FB761FA3A537001EE5AA /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */; };
 		FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */; };
 		FA9A4954A9EED41228503F98 /* Pods_AstroTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38934C9B2EB91DB400864BF3 /* Pods_AstroTest.framework */; };
+		FAB01C6A1FA62DCD00E6095B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB01C691FA62DCD00E6095B /* LoadingView.swift */; };
+		FAB01C6C1FA62DDA00E6095B /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB01C6B1FA62DDA00E6095B /* LoadingView.xib */; };
 		FAB5AFFC1FA56AED00E74358 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5AFFB1FA56AED00E74358 /* MenuTableViewCell.swift */; };
 		FAB5AFFE1FA56AF900E74358 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5AFFD1FA56AF900E74358 /* MenuTableViewCell.xib */; };
 		FAB5B0021FA56B3E00E74358 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B0011FA56B3E00E74358 /* MenuFooterView.swift */; };
@@ -181,6 +183,8 @@
 		FA60FB6D1FA3A537001EE5AA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FA60FB6E1FA3A537001EE5AA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		FA60FB7B1FA3B3EC001EE5AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAB01C691FA62DCD00E6095B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		FAB01C6B1FA62DDA00E6095B /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		FAB5AFFB1FA56AED00E74358 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		FAB5AFFD1FA56AF900E74358 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		FAB5B0011FA56B3E00E74358 /* MenuFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 				FA2ABD5B1FA33AEB00326B50 /* Base */,
 				FA2ABD5E1FA33B3D00326B50 /* CollectionView */,
 				FA2ABD541FA33A4F00326B50 /* CollectionViewCell */,
+				FAB01C681FA62DB200E6095B /* Loading */,
 				FA2ABD531FA33A4A00326B50 /* TableViewCell */,
 				FA2ABD5F1FA33B4200326B50 /* TableView */,
 			);
@@ -684,6 +689,15 @@
 			path = FacebookSDK;
 			sourceTree = "<group>";
 		};
+		FAB01C681FA62DB200E6095B /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				FAB01C691FA62DCD00E6095B /* LoadingView.swift */,
+				FAB01C6B1FA62DDA00E6095B /* LoadingView.xib */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
 		FAB5AFF91FA56ABD00E74358 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +920,7 @@
 				FAB742601FA4CE35009C65E9 /* SlideMenuViewController.xib in Resources */,
 				FAB5B0081FA56B6000E74358 /* MenuHeader.xib in Resources */,
 				FAB5B00D1FA57B7B00E74358 /* ChannelTableViewCell.xib in Resources */,
+				FAB01C6C1FA62DDA00E6095B /* LoadingView.xib in Resources */,
 				FA60FB741FA3A537001EE5AA /* AccountKitStrings.bundle in Resources */,
 				FA2ABD331FA335B300326B50 /* LoginViewController.xib in Resources */,
 			);
@@ -1129,6 +1144,7 @@
 				FABBAE781FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift in Sources */,
 				FA2ABD501FA3381C00326B50 /* TVGuideParams.swift in Sources */,
 				FA2ABD4E1FA3380C00326B50 /* ChannelParams.swift in Sources */,
+				FAB01C6A1FA62DCD00E6095B /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
