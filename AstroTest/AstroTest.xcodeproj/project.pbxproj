@@ -11,7 +11,6 @@
 		9ECB8F85EAF0754380F39357 /* Pods_AstroTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */; };
 		FA2138DF1FA44BFD00DE84AC /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */; };
 		FA2138E01FA44BFD00DE84AC /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */; };
-		FA2138E21FA4567400DE84AC /* FirebaseDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */; };
 		FA2138E41FA460E500DE84AC /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2138E31FA460E500DE84AC /* UserRequest.swift */; };
 		FA2ABCDF1FA3326E00326B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2ABCDE1FA3326E00326B50 /* AppDelegate.swift */; };
 		FA2ABCE41FA3326E00326B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2ABCE21FA3326E00326B50 /* Main.storyboard */; };
@@ -80,8 +79,14 @@
 		FAB5B00D1FA57B7B00E74358 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B00C1FA57B7B00E74358 /* ChannelTableViewCell.xib */; };
 		FAB5B0101FA598F500E74358 /* FavoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B00F1FA598F500E74358 /* FavoriesCollectionViewCell.swift */; };
 		FAB5B0121FA598FD00E74358 /* FavoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB5B0111FA598FD00E74358 /* FavoriesCollectionViewCell.xib */; };
+		FAB5B0141FA5AEED00E74358 /* FirebaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5B0131FA5AEED00E74358 /* FirebaseDataManager.swift */; };
 		FAB742601FA4CE35009C65E9 /* SlideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB7425F1FA4CE35009C65E9 /* SlideMenuViewController.xib */; };
 		FAB742661FA4DE87009C65E9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB742651FA4DE87009C65E9 /* UIViewController.swift */; };
+		FABBAE741FA5CD9A0052B4CC /* TVGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBAE721FA5CD9A0052B4CC /* TVGuideViewController.swift */; };
+		FABBAE751FA5CD9A0052B4CC /* TVGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABBAE731FA5CD9A0052B4CC /* TVGuideViewController.xib */; };
+		FABBAE781FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBAE771FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift */; };
+		FABBAE7A1FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABBAE791FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib */; };
+		FABBAE7D1FA5D11E0052B4CC /* TVGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBAE7C1FA5D11E0052B4CC /* TVGuide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +117,6 @@
 		C664CF8F083F5294BD42AA60 /* Pods-AstroTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.release.xcconfig"; sourceTree = "<group>"; };
 		FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
 		FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
-		FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatamanager.swift; sourceTree = "<group>"; };
 		FA2138E31FA460E500DE84AC /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		FA2ABCDB1FA3326E00326B50 /* AstroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2ABCDE1FA3326E00326B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,8 +191,14 @@
 		FAB5B00C1FA57B7B00E74358 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
 		FAB5B00F1FA598F500E74358 /* FavoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAB5B0111FA598FD00E74358 /* FavoriesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAB5B0131FA5AEED00E74358 /* FirebaseDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDataManager.swift; sourceTree = "<group>"; };
 		FAB7425F1FA4CE35009C65E9 /* SlideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuViewController.xib; sourceTree = "<group>"; };
 		FAB742651FA4DE87009C65E9 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		FABBAE721FA5CD9A0052B4CC /* TVGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideViewController.swift; sourceTree = "<group>"; };
+		FABBAE731FA5CD9A0052B4CC /* TVGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVGuideViewController.xib; sourceTree = "<group>"; };
+		FABBAE771FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABBAE791FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVGuideCollectionViewCell.xib; sourceTree = "<group>"; };
+		FABBAE7C1FA5D11E0052B4CC /* TVGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuide.swift; sourceTree = "<group>"; };
 		FB97DE668D8DB9348B908A93 /* Pods-AstroTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +330,7 @@
 				FA2ABD171FA3345C00326B50 /* Base */,
 				FA2ABD131FA3337300326B50 /* Chanel */,
 				FA2ABD2F1FA3359700326B50 /* Login */,
+				FABBAE711FA5CD7C0052B4CC /* TVGuide */,
 				FA2ABD161FA3341700326B50 /* Slide */,
 			);
 			path = Controllers;
@@ -333,6 +344,7 @@
 				FAB5B0091FA56C5B00E74358 /* Menu */,
 				FA5D4F1B1FA3571800CA8809 /* DataManager */,
 				FA5D4F231FA38A7C00CA8809 /* FilterSort */,
+				FABBAE7B1FA5D1040052B4CC /* TVGuide */,
 				FA2ABD3D1FA3366600326B50 /* Request */,
 			);
 			path = Models;
@@ -541,6 +553,7 @@
 			children = (
 				FA2ABD561FA33A5D00326B50 /* Base */,
 				FAB5B00E1FA598D500E74358 /* Favorites */,
+				FABBAE761FA5CE170052B4CC /* TVGuide */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -611,8 +624,8 @@
 			children = (
 				FA5D4F1C1FA3577C00CA8809 /* DataManager.swift */,
 				FA5D4F1E1FA358D400CA8809 /* LocalDataManager.swift */,
+				FAB5B0131FA5AEED00E74358 /* FirebaseDataManager.swift */,
 				FA5D4F201FA358E200CA8809 /* AWSDataManager.swift */,
-				FA2138E11FA4567400DE84AC /* FirebaseDatamanager.swift */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -732,6 +745,32 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FABBAE711FA5CD7C0052B4CC /* TVGuide */ = {
+			isa = PBXGroup;
+			children = (
+				FABBAE721FA5CD9A0052B4CC /* TVGuideViewController.swift */,
+				FABBAE731FA5CD9A0052B4CC /* TVGuideViewController.xib */,
+			);
+			name = TVGuide;
+			sourceTree = "<group>";
+		};
+		FABBAE761FA5CE170052B4CC /* TVGuide */ = {
+			isa = PBXGroup;
+			children = (
+				FABBAE771FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift */,
+				FABBAE791FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib */,
+			);
+			name = TVGuide;
+			sourceTree = "<group>";
+		};
+		FABBAE7B1FA5D1040052B4CC /* TVGuide */ = {
+			isa = PBXGroup;
+			children = (
+				FABBAE7C1FA5D11E0052B4CC /* TVGuide.swift */,
+			);
+			name = TVGuide;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -849,10 +888,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABBAE751FA5CD9A0052B4CC /* TVGuideViewController.xib in Resources */,
 				FA2ABCE91FA3326E00326B50 /* LaunchScreen.storyboard in Resources */,
 				FA60FB581FA398C8001EE5AA /* GoogleSignIn.bundle in Resources */,
 				FA2ABD291FA3351B00326B50 /* DetailChannelViewController.xib in Resources */,
 				FA60FB761FA3A537001EE5AA /* FacebookSDKStrings.bundle in Resources */,
+				FABBAE7A1FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib in Resources */,
 				FA2ABCE61FA3326E00326B50 /* Assets.xcassets in Resources */,
 				FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */,
 				FA2ABD251FA3350C00326B50 /* ChannelsListViewController.xib in Resources */,
@@ -1067,11 +1108,13 @@
 				FA2ABD361FA335FF00326B50 /* Utils.swift in Sources */,
 				FA5D4F1F1FA358D400CA8809 /* LocalDataManager.swift in Sources */,
 				FA5D4F1D1FA3577C00CA8809 /* DataManager.swift in Sources */,
+				FABBAE7D1FA5D11E0052B4CC /* TVGuide.swift in Sources */,
 				FA2ABD431FA3370200326B50 /* API.swift in Sources */,
+				FABBAE741FA5CD9A0052B4CC /* TVGuideViewController.swift in Sources */,
 				FA2138E41FA460E500DE84AC /* UserRequest.swift in Sources */,
+				FAB5B0141FA5AEED00E74358 /* FirebaseDataManager.swift in Sources */,
 				FA2ABD191FA3347000326B50 /* BaseViewController.swift in Sources */,
 				FA2ABD2D1FA3357C00326B50 /* SlideMenuViewController.swift in Sources */,
-				FA2138E21FA4567400DE84AC /* FirebaseDatamanager.swift in Sources */,
 				FA2ABD5A1FA33A8500326B50 /* BaseCollectionViewCell.swift in Sources */,
 				FA2ABD4A1FA337D900326B50 /* BaseObject.swift in Sources */,
 				FA2ABD281FA3351B00326B50 /* DetailChannelViewController.swift in Sources */,
@@ -1083,6 +1126,7 @@
 				FA2ABD6F1FA33C0700326B50 /* ConfigTableView.swift in Sources */,
 				FA2ABD521FA338EC00326B50 /* Request.swift in Sources */,
 				FA2ABD7A1FA3485D00326B50 /* ConfigCollectionViewFlowLayout.swift in Sources */,
+				FABBAE781FA5CE3D0052B4CC /* TVGuideCollectionViewCell.swift in Sources */,
 				FA2ABD501FA3381C00326B50 /* TVGuideParams.swift in Sources */,
 				FA2ABD4E1FA3380C00326B50 /* ChannelParams.swift in Sources */,
 			);

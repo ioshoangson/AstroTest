@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zVB-OE-nyF" customClass="TVGuideCollectionViewCell" customModule="AstroTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="176" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labeldasfasfasf" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmL-wS-mHm">
+                        <rect key="frame" x="15" y="15" width="146" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z0-EE-JAn">
+                        <rect key="frame" x="15" y="84" width="146" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5u-QG-SiN">
+                        <rect key="frame" x="15" y="105" width="146" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fG-uw-Ced">
+                        <rect key="frame" x="15" y="126" width="146" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZp-ac-417">
+                        <rect key="frame" x="128" y="126" width="48" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-3m-UbI">
+                                <rect key="frame" x="6" y="6" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="alQ-eL-dCb"/>
+                            <constraint firstAttribute="width" constant="48" id="cN0-je-dnf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.86666666670000003" green="0.1019607843" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Z5u-QG-SiN" firstAttribute="top" secondItem="8z0-EE-JAn" secondAttribute="bottom" constant="3" id="3lT-gX-dA3"/>
+                <constraint firstAttribute="trailing" secondItem="8fG-uw-Ced" secondAttribute="trailing" constant="15" id="8QI-aj-GQk"/>
+                <constraint firstItem="8fG-uw-Ced" firstAttribute="leading" secondItem="zVB-OE-nyF" secondAttribute="leading" constant="15" id="9X4-Fc-Mm7"/>
+                <constraint firstItem="8fG-uw-Ced" firstAttribute="top" secondItem="Z5u-QG-SiN" secondAttribute="bottom" constant="3" id="NIS-cr-n5a"/>
+                <constraint firstAttribute="trailing" secondItem="xZp-ac-417" secondAttribute="trailing" id="PN3-lF-Stb"/>
+                <constraint firstAttribute="trailing" secondItem="8z0-EE-JAn" secondAttribute="trailing" constant="15" id="ScP-pB-RiJ"/>
+                <constraint firstAttribute="trailing" secondItem="CmL-wS-mHm" secondAttribute="trailing" constant="15" id="Sh4-ln-tVL"/>
+                <constraint firstItem="CmL-wS-mHm" firstAttribute="top" secondItem="zVB-OE-nyF" secondAttribute="top" constant="15" id="Yrk-iz-J7w"/>
+                <constraint firstItem="CmL-wS-mHm" firstAttribute="leading" secondItem="zVB-OE-nyF" secondAttribute="leading" constant="15" id="azs-HT-TfA"/>
+                <constraint firstAttribute="trailing" secondItem="Z5u-QG-SiN" secondAttribute="trailing" constant="15" id="c5L-kd-LBd"/>
+                <constraint firstItem="Z5u-QG-SiN" firstAttribute="leading" secondItem="zVB-OE-nyF" secondAttribute="leading" constant="15" id="tKS-4c-tg5"/>
+                <constraint firstAttribute="bottom" secondItem="xZp-ac-417" secondAttribute="bottom" id="uA5-kx-PNG"/>
+                <constraint firstAttribute="bottom" secondItem="8fG-uw-Ced" secondAttribute="bottom" constant="15" id="yh1-PS-V8d"/>
+                <constraint firstItem="8z0-EE-JAn" firstAttribute="leading" secondItem="zVB-OE-nyF" secondAttribute="leading" constant="15" id="zyx-Y2-UD8"/>
+            </constraints>
+            <size key="customSize" width="176" height="159"/>
+            <connections>
+                <outlet property="displayDateTimeLabel" destination="Z5u-QG-SiN" id="mA8-hi-Itf"/>
+                <outlet property="displayDurationLabel" destination="8fG-uw-Ced" id="mn5-3c-Egb"/>
+                <outlet property="genreLabel" destination="8z0-EE-JAn" id="rML-yo-LnP"/>
+                <outlet property="onNowView" destination="B0G-3m-UbI" id="ibp-5m-qQR"/>
+                <outlet property="programmeTitleLabel" destination="CmL-wS-mHm" id="XKb-dw-WWd"/>
+            </connections>
+            <point key="canvasLocation" x="-42" y="106.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

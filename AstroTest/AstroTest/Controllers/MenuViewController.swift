@@ -57,7 +57,7 @@ class MenuViewController: BaseViewController {
         
         self.menuFooter?.logoutAction = {
             UserRequest.shareInstance.logout(completion: { (success) in
-                APP_DELEGATE.setupLoginViewController()
+                APP_DELEGATE.setupRootViewController()
             })
         }
         
@@ -89,6 +89,7 @@ class MenuViewController: BaseViewController {
             self.initWithViewController(controller: ChannelsListViewController())
             break
         case .tvGuide:
+            self.initWithViewController(controller: TVGuideViewController())
             break
         case .settting:
             break

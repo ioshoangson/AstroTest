@@ -73,11 +73,11 @@ class HomeViewController: BaseViewController {
         SortChannel.showSortByOptionInViewController(controller: self, sortByChannelNameBlock: {
             let results = SortChannel.sortByChannelName(array: self.favorites)
             self.homeContentView?.setDataSource(dataSource: results as AnyObject)
-            FirebaseDatamanager.shareInstance.storeSortChannelsBy(sortBy: .name)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .name)
         }, sortByChannelNumberBlock: {
             let results = SortChannel.sortByChannelNumber(array: self.favorites)
             self.homeContentView?.setDataSource(dataSource: results as AnyObject)
-            FirebaseDatamanager.shareInstance.storeSortChannelsBy(sortBy: .number)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .number)
         })
     }
 }

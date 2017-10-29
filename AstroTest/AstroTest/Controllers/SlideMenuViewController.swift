@@ -110,23 +110,6 @@ class SlideMenuViewController: BaseViewController {
     
     override func initData() {
         super.initData()
-        
-        /*
-        ChannelsRequest.shareInstance.getListChannel(context: self) { (success, data) in
-            if(success) {
-            }
-        }
-        
-            
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) { 
-            TVGuideRequest.shareInstance.getCurrentShowForAllChannels(context: self, channelId: Application.shareInstance.listChannelsId!, periodStart: Utils.getCurrentTime(), periodEnd: Utils.getPeriodEnd(date: Utils.sevenDaysfromNow()), completion: { (success, data) in
-                
-            })
-        }*/
-        
-        FirebaseDatamanager.shareInstance.getListFavoritesChannel { (data) in
-            
-        }
     }
 
     override func didReceiveMemoryWarning() {

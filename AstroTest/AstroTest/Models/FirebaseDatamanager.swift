@@ -12,11 +12,13 @@ import FirebaseDatabase
 enum SortChannelBy: String {
     case number = "number"
     case name = "name"
+    case numberAndFavorites = "numberAndFavorites"
+    case nameAndFavorites = "nameAndFavorites"
 }
 
-class FirebaseDatamanager: DataManager {
+class FirebaseDataManager: DataManager {
     
-    static let shareInstance = FirebaseDatamanager()
+    static let shareInstance = FirebaseDataManager()
     
     public typealias CompletionBlock = (AnyObject) -> Void
 

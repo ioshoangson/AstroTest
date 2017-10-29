@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TVGuideViewController" customModule="AstroTest" customModuleProvider="target">
+            <connections>
+                <outlet property="tvGuideContentView" destination="tMz-4L-6mp" id="O2y-fh-iFk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-4L-6mp" customClass="TVGuideContentView" customModule="AstroTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2BB-eL-Cpy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4gL-Eb-tua">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="tMz-4L-6mp" id="pQt-WG-gyn"/>
+                                <outlet property="delegate" destination="tMz-4L-6mp" id="wyW-oT-zWm"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2BB-eL-Cpy" secondAttribute="trailing" id="Ou0-Dx-zEB"/>
+                        <constraint firstItem="2BB-eL-Cpy" firstAttribute="top" secondItem="tMz-4L-6mp" secondAttribute="top" id="bC3-iT-vAn"/>
+                        <constraint firstItem="2BB-eL-Cpy" firstAttribute="leading" secondItem="tMz-4L-6mp" secondAttribute="leading" id="cCc-a1-Tgf"/>
+                        <constraint firstAttribute="bottom" secondItem="2BB-eL-Cpy" secondAttribute="bottom" id="uiR-mh-n9g"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="contentCollectionView" destination="2BB-eL-Cpy" id="PFg-wS-xX5"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tMz-4L-6mp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DYj-6U-H0I"/>
+                <constraint firstItem="tMz-4L-6mp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kyv-Ur-Oa2"/>
+                <constraint firstAttribute="bottom" secondItem="tMz-4L-6mp" secondAttribute="bottom" id="hd1-Xv-xao"/>
+                <constraint firstAttribute="trailing" secondItem="tMz-4L-6mp" secondAttribute="trailing" id="mMD-1f-inb"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -43,4 +43,15 @@ class Utils: NSObject {
         firstElement?.append("23:59")
         return firstElement!
     }
+    
+    static func UTCToLocal(date:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-DD HH:mm:ss.s"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let dt = dateFormatter.date(from: date)
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: dt!)
+    }
 }

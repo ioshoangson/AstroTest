@@ -62,7 +62,7 @@ class ChannelsListViewController: BaseViewController {
             }
         }
         
-        FirebaseDatamanager.shareInstance.getListFavoritesChannel { (data) in
+        FirebaseDataManager.shareInstance.getListFavoritesChannel { (data) in
             print("FIREBASE DATABASE CLOUD: \(data)")
         }
     }
@@ -86,11 +86,19 @@ class ChannelsListViewController: BaseViewController {
         SortChannel.showSortByOptionInViewController(controller: self, sortByChannelNameBlock: {
             let results = SortChannel.sortByChannelName(array: self.channels)
             self.channelsListContentView?.setDataSource(dataSource: results as AnyObject)
-            FirebaseDatamanager.shareInstance.storeSortChannelsBy(sortBy: .name)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .name)
         }, sortByChannelNumberBlock: {
             let results = SortChannel.sortByChannelNumber(array: self.channels)
             self.channelsListContentView?.setDataSource(dataSource: results as AnyObject)
-            FirebaseDatamanager.shareInstance.storeSortChannelsBy(sortBy: .number)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .number)
+        }, sortByChannelNumberAndFavoritesBlock: {
+            let results = SortChannel.sortByFavoriteAndChannelNumber(array: self.channels)
+            self.channelsListContentView?.setDataSource(dataSource: results as AnyObject)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .nameAndFavorites)
+        }, sortByChannelNameAndFavoritesBlock: {
+            let results = SortChannel.sortByFavoriteAndChannelName(array: self.channels)
+            self.channelsListContentView?.setDataSource(dataSource: results as AnyObject)
+            FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .numberAndFavorites)
         })
     }
     
@@ -131,7 +139,7 @@ extension ChannelsListViewController: ChannelTableViewCellDelegate {
                 self.favories = self.getFavorites()
                 self.favories.append(channel)
                 LocalDataManager.shareInstance.storeFavoritesChannels(channels: self.favories as AnyObject)
-                FirebaseDatamanager.shareInstance.storeFavoritesChannels(channels: channel)
+                FirebaseDataManager.shareInstance.storeFavoritesChannels(channels: channel)
             }else {
                 LocalDataManager.shareInstance.removeChannel(channel: channel)
             }

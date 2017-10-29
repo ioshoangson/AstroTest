@@ -15,14 +15,16 @@ class UserRequest: NSObject {
     
     public typealias CompletionBlock = (Bool) -> Void
     
-    public func logout(completion: CompletionBlock) {
+    public func logout(completion: @escaping CompletionBlock) {
         DispatchQueue.main.async {
             FBSDKLoginManager().logOut()
             GIDSignIn.sharedInstance().signOut()
 
             LocalDataManager.shareInstance.removeListFavoritesChannel()
-            FirebaseDatamanager.shareInstance.removeListFavoritesChannel()
-            FirebaseDatamanager.shareInstance.removeSortChannelBy()
+            FirebaseDataManager.shareInstance.removeListFavoritesChannel()
+            FirebaseDataManager.shareInstance.removeSortChannelBy()
+            
+            completion(true)
         }
     }
 

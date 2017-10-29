@@ -25,13 +25,21 @@ class TVGuideRequest: NSObject {
         Request.shareInstance.requestWithGETMethod(request: urlRequest!) { (success, data) in
             if (success) {
                 DispatchQueue.main.async {
+                    completion(true, self.parseCurrentShowForAllChannels(response: data as! Response))
                 }
             }
         }
     }
     
-    private func parseChannelDictionary() {
-        
+    private func parseCurrentShowForAllChannels(response: Response) -> AnyObject{
+        let dict = response.data?["getevent"] as! Array<AnyObject>
+        var results = [TVGuide]()
+        for item in dict {
+            let tvGuideDict = item as! Dictionary<String, AnyObject>
+            let tvGuide = TVGuide(jsonData: tvGuideDict as NSDictionary)
+            results.append(tvGuide)
+        }
+        return results as AnyObject
     }
 
 }

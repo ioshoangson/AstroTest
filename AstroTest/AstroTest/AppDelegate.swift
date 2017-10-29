@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    private func setupRootViewController() {
+    public func setupRootViewController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let homeNavigationController = UINavigationController(rootViewController: HomeViewController())
         let slideMenuViewController = SlideMenuViewController(menuViewController: MenuViewController(), centerViewController: homeNavigationController)
@@ -93,7 +93,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     public func setupLoginViewController() {
-        
+        let loginViewController = LoginViewController()
+        self.window?.rootViewController = loginViewController
     }
 }
 
