@@ -19,7 +19,12 @@ class TVGuideViewController: BaseViewController {
     
     @IBOutlet weak private var tvGuideContentView: TVGuideContentView?
     private var tvGuides = [TVGuide]()
-
+    private var tvGuideDateView: TVGuideDateView?
+    private var periodStart: String?
+    private var periodEnd: String?
+    
+    let channelsId = ["1","2","3","4","5","6","7","8","9","10"] as Array<String>
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,12 +38,35 @@ class TVGuideViewController: BaseViewController {
     
     override func setupUI() {
         super.setupUI()
+        self.loadTVGuideDateView()
         self.addSortButton()
     }
     
+    private func loadTVGuideDateView() {
+        self.tvGuideDateView = (Bundle.main.loadNibNamed("TVGuideDateView", owner: self, options: nil)?.first as? TVGuideDateView)!
+        self.tvGuideDateView?.didSelectDate = {
+            (button: UIButton, index: Int) -> Void in
+            let nextDay = Utils.getNextDayFromCurrentDay(date: Date(), value: index)
+            self.tvGuideDateView?.updateDateLabel(date: Utils.getStringFromDate(date: nextDay))
+            
+            //Get params
+            self.periodStart = Utils.getStringFromDate(date: nextDay)
+            self.periodEnd = Utils.getPeriodEnd(date: nextDay)
+            self.requestData(periodStart: self.periodStart!, periodEnd: self.periodEnd!)
+        }
+        self.tvGuideDateView?.updateDateLabel(date: Utils.getCurrentTime())
+        self.navigationItem.titleView = self.tvGuideDateView
+    }
+    
     override func initData() {
+        self.periodStart = Utils.getCurrentTime()
+        self.periodEnd = Utils.getPeriodEnd(date: Date())
+        self.requestData(periodStart: self.periodStart!, periodEnd: self.periodEnd!)
+    }
+    
+    private func requestData(periodStart: String, periodEnd: String) {
         self.addLoadingView()
-        TVGuideRequest.shareInstance.getCurrentShowForAllChannels(context: self, channelId: Application.shareInstance.listChannelsId!, periodStart: Utils.getCurrentTime(), periodEnd: Utils.getPeriodEnd(date: Date())) { (success, data) in
+        TVGuideRequest.shareInstance.getCurrentShowForAllChannels(context: self, channelId: Application.shareInstance.listChannelsId!, periodStart: self.periodStart!, periodEnd: self.periodEnd!) { (success, data) in
             self.removeLoadingView()
             self.tvGuides = data as! [TVGuide]
             self.tvGuideContentView?.setDataSource(dataSource: self.tvGuides as AnyObject)

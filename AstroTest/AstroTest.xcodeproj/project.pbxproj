@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0902C73B0B37CBE85DF2FA15 /* Pods_AstroTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56773DE52DC510A9964125ED /* Pods_AstroTestTests.framework */; };
 		9ECB8F85EAF0754380F39357 /* Pods_AstroTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */; };
+		EB9F0E1D1FA6BFD400906A28 /* TVGuideDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F0E1C1FA6BFD400906A28 /* TVGuideDateView.swift */; };
+		EB9F0E1F1FA6BFDC00906A28 /* TVGuideDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9F0E1E1FA6BFDC00906A28 /* TVGuideDateView.xib */; };
 		FA2138DF1FA44BFD00DE84AC /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */; };
 		FA2138E01FA44BFD00DE84AC /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */; };
 		FA2138E41FA460E500DE84AC /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2138E31FA460E500DE84AC /* UserRequest.swift */; };
@@ -117,6 +119,8 @@
 		B347C0E002E21127AB60FB3C /* Pods_AstroTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstroTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03C7D0B40CB947AB965D5F7 /* Pods-AstroTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTestUITests/Pods-AstroTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C664CF8F083F5294BD42AA60 /* Pods-AstroTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroTest/Pods-AstroTest.release.xcconfig"; sourceTree = "<group>"; };
+		EB9F0E1C1FA6BFD400906A28 /* TVGuideDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGuideDateView.swift; sourceTree = "<group>"; };
+		EB9F0E1E1FA6BFDC00906A28 /* TVGuideDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVGuideDateView.xib; sourceTree = "<group>"; };
 		FA2138DD1FA44BFD00DE84AC /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
 		FA2138DE1FA44BFD00DE84AC /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
 		FA2138E31FA460E500DE84AC /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -257,6 +261,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EB9F0E1B1FA6BFB900906A28 /* TVGuideDate */ = {
+			isa = PBXGroup;
+			children = (
+				EB9F0E1C1FA6BFD400906A28 /* TVGuideDateView.swift */,
+				EB9F0E1E1FA6BFDC00906A28 /* TVGuideDateView.xib */,
+			);
+			name = TVGuideDate;
+			sourceTree = "<group>";
+		};
 		FA2138DC1FA44BFD00DE84AC /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +385,7 @@
 		FA2ABD101FA332D800326B50 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB9F0E1B1FA6BFB900906A28 /* TVGuideDate */,
 				FA2ABD5B1FA33AEB00326B50 /* Base */,
 				FA2ABD5E1FA33B3D00326B50 /* CollectionView */,
 				FA2ABD541FA33A4F00326B50 /* CollectionViewCell */,
@@ -907,6 +921,7 @@
 				FA60FB581FA398C8001EE5AA /* GoogleSignIn.bundle in Resources */,
 				FA2ABD291FA3351B00326B50 /* DetailChannelViewController.xib in Resources */,
 				FA60FB761FA3A537001EE5AA /* FacebookSDKStrings.bundle in Resources */,
+				EB9F0E1F1FA6BFDC00906A28 /* TVGuideDateView.xib in Resources */,
 				FABBAE7A1FA5CE4D0052B4CC /* TVGuideCollectionViewCell.xib in Resources */,
 				FA2ABCE61FA3326E00326B50 /* Assets.xcassets in Resources */,
 				FA60FB7C1FA3B3EC001EE5AA /* GoogleService-Info.plist in Resources */,
@@ -1131,6 +1146,7 @@
 				FA2ABD191FA3347000326B50 /* BaseViewController.swift in Sources */,
 				FA2ABD2D1FA3357C00326B50 /* SlideMenuViewController.swift in Sources */,
 				FA2ABD5A1FA33A8500326B50 /* BaseCollectionViewCell.swift in Sources */,
+				EB9F0E1D1FA6BFD400906A28 /* TVGuideDateView.swift in Sources */,
 				FA2ABD4A1FA337D900326B50 /* BaseObject.swift in Sources */,
 				FA2ABD281FA3351B00326B50 /* DetailChannelViewController.swift in Sources */,
 				FA5D4F271FA38ADD00CA8809 /* SortChannel.swift in Sources */,

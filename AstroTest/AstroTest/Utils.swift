@@ -19,8 +19,8 @@ class Utils: NSObject {
         return (Calendar.current as NSCalendar).date(byAdding: .day, value: 7, to: Date(), options: [])!
     }
     
-    static func getNextDayFromCurrentDay() -> Date {
-        return (Calendar.current as NSCalendar).date(byAdding: .day, value: 1, to: Date(), options: [])!
+    static func getNextDayFromCurrentDay(date: Date, value: Int) -> Date {
+        return (Calendar.current as NSCalendar).date(byAdding: .day, value: value, to: date, options: [])!
     }
 
     static func getStringFromDate(date: Date) -> String {

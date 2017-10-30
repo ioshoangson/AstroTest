@@ -37,9 +37,12 @@ class TVGuideRequest: NSObject {
         for item in dict {
             let tvGuideDict = item as! Dictionary<String, AnyObject>
             let tvGuide = TVGuide(jsonData: tvGuideDict as NSDictionary)
+            results.append(tvGuide)
+            
+            /*
             if tvGuide.isOnNow! {
                 results.append(tvGuide)
-            }
+            }*/
         }
         return results as AnyObject
     }

@@ -23,5 +23,6 @@ class TVGuideCollectionViewCell: BaseCollectionViewCell {
         self.genreLabel?.text = tvGuide?.genre
         self.displayDateTimeLabel?.text = tvGuide?.getDisplayTime()
         self.displayDurationLabel?.text = tvGuide?.displayDuration
+        self.onNowView?.isHidden = !(tvGuide?.isOnNow)!
     }
 }
