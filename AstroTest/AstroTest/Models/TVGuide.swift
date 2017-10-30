@@ -36,14 +36,13 @@ class TVGuide: BaseObject {
         self.shortSynopsis = self.jsonData?["shortSynopsis"] as? String
         self.live = self.jsonData?["live"] as? Bool
         self.eventID = self.jsonData?["eventID"] as? Int
-        self.isOnNow = self.showOnNow()
     }
     
     public func getLocalTimeFromUTC() -> String{
         return Utils.UTCToLocal(date: self.displayDateTimeUtc!)
     }
     
-    private func showOnNow() -> Bool {
+    public func showOnNow(periodStart: String) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
         let startShowDate = dateFormatter.date(from: self.displayDateTime!)
@@ -53,16 +52,29 @@ class TVGuide: BaseObject {
         let durations = self.displayDuration?.components(separatedBy: ":")
         let hour = Int((durations?.first)!)
         let minute = Int((durations?[1])!)
-        var endShowDate = calendar.date(byAdding: .hour, value: hour!, to: startShowDate!)
-        endShowDate = calendar.date(byAdding: .minute, value: minute!, to: startShowDate!)
-
-        let date = Date()
-
-        print(Utils.getStringFromDate(date: startShowDate!))
-        print(Utils.getStringFromDate(date: endShowDate!))
-        print(Utils.getStringFromDate(date: date))
+        var endShowDate = startShowDate
+        if hour! > 0 {
+            endShowDate = calendar.date(byAdding: .hour, value: hour!, to: endShowDate!)
+        }
         
-        return Utils.isBetweenDates(date: date, beginDate: startShowDate!, endDate: endShowDate!)
+        if minute! > 0 {
+            endShowDate = calendar.date(byAdding: .minute, value: minute!, to: endShowDate!)
+        }
+        
+
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let currentDate = dateFormatter.date(from: periodStart)
+        
+
+        print("Start show time: \(Utils.getStringFromDate(date: startShowDate!))")
+        print("End show time: \(Utils.getStringFromDate(date: endShowDate!))")
+        print("Current time: \(Utils.getStringFromDate(date: currentDate!))")
+        
+        return Utils.isBetweenDates(date: currentDate!, beginDate: startShowDate!, endDate: endShowDate!)
+    }
+    
+    public func setIsOnNow(onNow: Bool) {
+        self.isOnNow = onNow
     }
     
     
