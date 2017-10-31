@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     public func setupLoginViewController() {
-        let loginViewController = LoginViewController()
+        let loginViewController = LoginViewController(showBackButton: false)
         self.window?.rootViewController = loginViewController
     }
 }

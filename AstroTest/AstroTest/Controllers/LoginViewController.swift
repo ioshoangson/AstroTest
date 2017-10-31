@@ -17,20 +17,33 @@ enum LoginTypes {
 
 protocol LoginDelegate: class {
     func loginSuccess(loginViewController: BaseViewController, loginType: LoginTypes)
+    func closeAction(loginViewController: BaseViewController, loginType: LoginTypes)
 }
 
 class LoginViewController: BaseViewController {
     @IBOutlet weak var googleButton: GIDSignInButton!
     @IBOutlet weak var facbookButton: UIButton?
-    
+    @IBOutlet weak var backButton: UIButton?
+
     public weak var delegate: LoginDelegate?
-    
+    private var showBackButton: Bool?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance().uiDelegate = self
         
         self.registerNotification()
+    }
+    
+    convenience init(showBackButton: Bool) {
+        self.init()
+        self.showBackButton = showBackButton
+    }
+    
+    override func setupUI() {
+        super.setupUI()
+        self.backButton?.isHidden = !showBackButton!
     }
     
     deinit {
@@ -70,11 +83,22 @@ class LoginViewController: BaseViewController {
         }
     }
     
-    
     @objc private func handleNotification() {
         if (self.delegate != nil) {
             self.delegate?.loginSuccess(loginViewController: self, loginType: .google)
         }
+    }
+    
+    @IBAction func closeAction(sender: AnyObject) {
+        self.dismiss(animated: true) { 
+            if (self.delegate != nil) {
+                self.delegate?.closeAction(loginViewController: self, loginType: .facebook)
+            }
+        }
+    }
+    
+    @IBAction func viewAsGuestAction(sender: AnyObject) {
+        APP_DELEGATE.setupRootViewController()
     }
 }
 

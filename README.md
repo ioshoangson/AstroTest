@@ -19,7 +19,7 @@ Structure of project
 - ChannelsListViewController: show & sort list channels list. 
 - ChannelDetailViewController: show channels infor in the future:d
 - LoginViewController: implement login via facebook/google+
-- TVGuideViewController: show current TVGuide & sort
+- TVGuideViewController: show & sort current TVGuide, paging by date
 
 2. Models: all model inherit from BaseObject
 + Menu: menu model with simple property(title, type)

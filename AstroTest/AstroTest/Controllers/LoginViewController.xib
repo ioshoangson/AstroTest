@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="AstroTest" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="CgM-q3-Nw9" id="iq3-MV-pif"/>
                 <outlet property="facbookButton" destination="bXm-MY-nxg" id="rrw-yc-Caz"/>
                 <outlet property="googleButton" destination="SYf-c6-T0S" id="cnM-Bk-dzi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,22 +22,65 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-c6-T0S" customClass="GIDSignInButton">
-                    <rect key="frame" x="85" y="196" width="240" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYf-c6-T0S" customClass="GIDSignInButton">
+                    <rect key="frame" x="87" y="329" width="200" height="39"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="9Go-hf-ru9"/>
+                        <constraint firstAttribute="width" constant="200" id="Mrs-80-VBC"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-MY-nxg">
-                    <rect key="frame" x="85" y="330" width="240" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.86666666670000003" green="0.1019607843" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-MY-nxg">
+                    <rect key="frame" x="84" y="385" width="207" height="47"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="9JJ-sr-6oG"/>
+                        <constraint firstAttribute="width" constant="207" id="jRt-Es-LGg"/>
+                    </constraints>
+                    <state key="normal" image="login-with-facebook-btn"/>
                     <connections>
                         <action selector="loginButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="ZTn-EA-7io"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgM-q3-Nw9">
+                    <rect key="frame" x="315" y="30" width="40" height="39"/>
+                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="closedbutton"/>
+                    <connections>
+                        <action selector="closeActionWithSender:" destination="-1" eventType="touchUpInside" id="rbf-7R-tRD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egN-X7-l3K">
+                    <rect key="frame" x="87" y="155" width="200" height="68"/>
+                    <color key="backgroundColor" red="0.98431372549999996" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="pyG-Df-4Gq"/>
+                        <constraint firstAttribute="height" constant="68" id="uN7-Sc-XQ0"/>
+                    </constraints>
+                    <state key="normal" title="VIEW AS GUEST">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="viewAsGuestActionWithSender:" destination="-1" eventType="touchUpInside" id="7ce-HY-Jpx"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SYf-c6-T0S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3mn-Rk-wfd"/>
+                <constraint firstItem="CgM-q3-Nw9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="91L-kg-BU7"/>
+                <constraint firstItem="egN-X7-l3K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="155" id="OmA-AD-MFc"/>
+                <constraint firstItem="bXm-MY-nxg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ppx-MY-P0o"/>
+                <constraint firstItem="bXm-MY-nxg" firstAttribute="top" secondItem="SYf-c6-T0S" secondAttribute="bottom" constant="17" id="okk-Sy-V9u"/>
+                <constraint firstAttribute="trailing" secondItem="CgM-q3-Nw9" secondAttribute="trailing" constant="20" id="r3b-cF-rZI"/>
+                <constraint firstItem="egN-X7-l3K" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="r3t-XK-T3h"/>
+                <constraint firstAttribute="bottom" secondItem="bXm-MY-nxg" secondAttribute="bottom" constant="235" id="zou-EZ-hJ5"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="closedbutton" width="40" height="39"/>
+        <image name="login-with-facebook-btn" width="207" height="47"/>
+    </resources>
 </document>

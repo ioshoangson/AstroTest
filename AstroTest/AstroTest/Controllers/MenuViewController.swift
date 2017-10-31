@@ -56,9 +56,7 @@ class MenuViewController: BaseViewController {
         }
         
         self.menuFooter?.logoutAction = {
-            UserRequest.shareInstance.logout(completion: { (success) in
-                APP_DELEGATE.setupRootViewController()
-            })
+            self.showLogoutAlert()
         }
         
         self.menuContentView?.didSelectItemAtIndex = {
@@ -77,6 +75,27 @@ class MenuViewController: BaseViewController {
                                                          Menu(titleMenu: "Channel", menuType: .channel),
                                                          Menu(titleMenu: "TV Guide", menuType: .tvGuide),
                                                          Menu(titleMenu: "Setting", menuType: .settting)] as AnyObject)
+    }
+    
+    private func showLogoutAlert() {
+        let alertVC = UIAlertController(title: nil, message: "Would you like to logout?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "No", style: .cancel) { action -> Void in
+        }
+        alertVC.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "Yes", style: .default) { action -> Void in
+            DispatchQueue.main.async {
+                self.logout()
+            }
+        }
+        alertVC.addAction(okAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    private func logout() {
+        UserRequest.shareInstance.logout(completion: { (success) in
+            APP_DELEGATE.setupLoginViewController()
+        })
     }
     
     
@@ -105,15 +124,4 @@ class MenuViewController: BaseViewController {
             self.getSlideViewController()?.setCenterViewController(controller: nav)
         }
     }
-
-    @IBAction func demoAction(sender: AnyObject) {
-        self.getSlideViewController()?.toogleMenu()
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { 
-            let channelsListViewController = ChannelsListViewController()
-            let nav = UINavigationController(rootViewController: channelsListViewController)
-            self.getSlideViewController()?.setCenterViewController(controller: nav)
-        }
-    }
-
 }

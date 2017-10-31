@@ -53,7 +53,6 @@ class ChannelsListViewController: BaseViewController {
     }
     
     
-    
     override func initData() {
         
         self.addLoadingView()
@@ -75,15 +74,16 @@ class ChannelsListViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func sortAction() {
-        self.showSortByOption()
-    }
+   
     
     @IBAction func nextAction(sender: AnyObject) {
         let detailChannelViewController = DetailChannelViewController()
         self.navigationController?.pushViewController(detailChannelViewController, animated: true)
     }
     
+    override func sortAction() {
+        self.showSortByOption()
+    }
     
     private func showSortByOption() {
         SortChannel.showSortByOptionInViewController(controller: self, sortByChannelNameBlock: {
@@ -106,7 +106,7 @@ class ChannelsListViewController: BaseViewController {
     }
     
     private func showLoginViewController() {
-        let loginViewController = LoginViewController()
+        let loginViewController = LoginViewController(showBackButton: true)
         loginViewController.delegate = self
         self.present(loginViewController, animated: true, completion: nil)
     }
@@ -121,6 +121,10 @@ class ChannelsListViewController: BaseViewController {
     
     public func showLoginAlert() {
         let alertVC = UIAlertController(title: nil, message: "Please login to use this feature!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+        }
+        alertVC.addAction(cancelAction)
+
         let okAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
             DispatchQueue.main.async {
                 self.showLoginViewController()
@@ -154,6 +158,10 @@ extension ChannelsListViewController: ChannelTableViewCellDelegate {
 
 
 extension ChannelsListViewController: LoginDelegate {
+    func closeAction(loginViewController: BaseViewController, loginType: LoginTypes) {
+        
+    }
+
     func loginSuccess(loginViewController: BaseViewController, loginType: LoginTypes) {
         self.dismiss(animated: true, completion: {})
     }

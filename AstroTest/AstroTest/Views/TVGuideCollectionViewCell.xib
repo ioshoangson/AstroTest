@@ -48,11 +48,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON NOW" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-3m-UbI">
                                 <rect key="frame" x="0.0" y="0.0" width="59" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
-                                <color key="textColor" red="0.98431372549999996" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B0G-3m-UbI" firstAttribute="top" secondItem="xZp-ac-417" secondAttribute="top" id="Opf-97-YyT"/>
                             <constraint firstAttribute="bottom" secondItem="B0G-3m-UbI" secondAttribute="bottom" id="V9v-j0-KcS"/>
