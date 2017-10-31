@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.configGoogleSignInSDK()
         
+        self.getListChannelFromBackground()
+        
         self.setupRootViewController()
 
         
@@ -95,6 +97,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public func setupLoginViewController() {
         let loginViewController = LoginViewController(showBackButton: false)
         self.window?.rootViewController = loginViewController
+    }
+    
+    private func getListChannelFromBackground() {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+            ChannelsRequest.shareInstance.getListChannel(context: nil, completion: { (success, data) in
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.FINISH_LOAD_CHANNEL_LIST_NOTIFICATION), object: nil)
+            })
+        }
     }
 }
 

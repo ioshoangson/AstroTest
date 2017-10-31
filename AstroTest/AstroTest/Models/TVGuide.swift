@@ -19,7 +19,7 @@ class TVGuide: BaseObject {
     private(set) var subGenre: String?
     private(set) var live: Bool?
     private(set) var eventID: Int?
-    private(set) var isOnNow: Bool?
+    private(set) var isOnNow: Bool = false
     
     override func parseData() {
         self.channel = Channel(channelId: self.jsonData?["channelId"] as! Int,

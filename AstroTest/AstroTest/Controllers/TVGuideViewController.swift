@@ -23,12 +23,13 @@ class TVGuideViewController: BaseViewController {
     private var periodStart: String?
     private var periodEnd: String?
     
-    let channelsId = ["1","2","3","4","5","6","7","8","9","10"] as Array<String>
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Constants.FINISH_LOAD_CHANNEL_LIST_NOTIFICATION), object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.registerNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +42,10 @@ class TVGuideViewController: BaseViewController {
         self.loadTVGuideDateView()
         self.addSortButton()
     }
+    
+    
+    //MARK:
+    //MARK: - Request Data
     
     private func loadTVGuideDateView() {
         self.tvGuideDateView = (Bundle.main.loadNibNamed("TVGuideDateView", owner: self, options: nil)?.first as? TVGuideDateView)!
@@ -59,9 +64,11 @@ class TVGuideViewController: BaseViewController {
     }
     
     override func initData() {
-        self.periodStart = Utils.getCurrentTime()
-        self.periodEnd = Utils.getPeriodEnd(date: Date())
-        self.requestData(periodStart: self.periodStart!, periodEnd: self.periodEnd!)
+        if Application.shareInstance.listChannelsId != nil {
+            self.periodStart = Utils.getCurrentTime()
+            self.periodEnd = Utils.getPeriodEnd(date: Date())
+            self.requestData(periodStart: self.periodStart!, periodEnd: self.periodEnd!)
+        }
     }
     
     private func requestData(periodStart: String, periodEnd: String) {
@@ -73,6 +80,8 @@ class TVGuideViewController: BaseViewController {
         }
     }
     
+    //MARK:
+    //MARK: - Sort
     
     override func sortAction() {
         self.showSortByOption()
@@ -88,6 +97,17 @@ class TVGuideViewController: BaseViewController {
             self.tvGuideContentView?.setDataSource(dataSource: results as AnyObject)
             FirebaseDataManager.shareInstance.storeSortChannelsBy(sortBy: .number)
         })
+    }
+    
+    //MARK:
+    //MARK: - Notification
+    
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: NSNotification.Name(rawValue: Constants.FINISH_LOAD_CHANNEL_LIST_NOTIFICATION), object: nil)
+    }
+    
+    @objc private func handleNotification() {
+        self.initData()
     }
     
 }

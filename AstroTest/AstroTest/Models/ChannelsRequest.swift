@@ -18,7 +18,7 @@ class ChannelsRequest: NSObject {
     //MARK:
     //MARK: - Public Methods
 
-    public func getListChannel(context: BaseViewController, completion: @escaping CompletionBlock) {
+    public func getListChannel(context: BaseViewController?, completion: @escaping CompletionBlock) {
         let requestDetail = RequestDetail.init(baseURL: API.SERVER_PRODUCT_URL, path: API.CHANNEL_LIST, requestMethod: .GET)
         let urlRequest = requestDetail.urlRequest
         

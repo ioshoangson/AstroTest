@@ -26,4 +26,6 @@ class Constants: NSObject {
     static let STATUS_CODE_404 = 404
     
     static let GOOGLE_LOGIN_NOTIFICATION = "GoogleLoginNotification"
+    static let FINISH_LOAD_CHANNEL_LIST_NOTIFICATION = "ChannelsListNotification"
+
 }

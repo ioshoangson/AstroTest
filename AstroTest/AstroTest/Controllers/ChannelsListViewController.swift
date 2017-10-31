@@ -53,8 +53,10 @@ class ChannelsListViewController: BaseViewController {
     }
     
     
+    //MARK:
+    //MARK: - Request Data
+    
     override func initData() {
-        
         self.addLoadingView()
         ChannelsRequest.shareInstance.getListChannel(context: self) { (success, data) in
             self.removeLoadingView()
@@ -74,13 +76,9 @@ class ChannelsListViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
     
-    @IBAction func nextAction(sender: AnyObject) {
-        let detailChannelViewController = DetailChannelViewController()
-        self.navigationController?.pushViewController(detailChannelViewController, animated: true)
-    }
-    
+    //MARK:
+    //MARK: - Sort
     override func sortAction() {
         self.showSortByOption()
     }
@@ -105,11 +103,10 @@ class ChannelsListViewController: BaseViewController {
         })
     }
     
-    private func showLoginViewController() {
-        let loginViewController = LoginViewController(showBackButton: true)
-        loginViewController.delegate = self
-        self.present(loginViewController, animated: true, completion: nil)
-    }
+    
+    
+    //MARK:
+    //MARK: - Public Methods
     
     public func getFavorites() -> [Channel]{
         let favories = LocalDataManager.shareInstance.getListFavoritesChannel() as? Array<Channel>
@@ -117,6 +114,12 @@ class ChannelsListViewController: BaseViewController {
             return favories!
         }
         return [Channel]()
+    }
+    
+    public func showLoginViewController() {
+        let loginViewController = LoginViewController(showBackButton: true)
+        loginViewController.delegate = self
+        self.present(loginViewController, animated: true, completion: nil)
     }
     
     public func showLoginAlert() {

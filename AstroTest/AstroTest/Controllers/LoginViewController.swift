@@ -27,6 +27,10 @@ class LoginViewController: BaseViewController {
 
     public weak var delegate: LoginDelegate?
     private var showBackButton: Bool?
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +50,6 @@ class LoginViewController: BaseViewController {
         self.backButton?.isHidden = !showBackButton!
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
-    }
-    
-    private func registerNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -64,6 +60,23 @@ class LoginViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    
+    //MARK:
+    //MARK: - Notification
+    
+    @objc private func handleNotification() {
+        if (self.delegate != nil) {
+            self.delegate?.loginSuccess(loginViewController: self, loginType: .google)
+        }
+    }
+    
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: NSNotification.Name(rawValue: Constants.GOOGLE_LOGIN_NOTIFICATION), object: nil)
+    }
+    
+    //MARK:
+    //MARK: - Event Actions
     @IBAction func loginButtonClicked(sender: AnyObject) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -76,16 +89,10 @@ class LoginViewController: BaseViewController {
                 if fbloginresult.grantedPermissions != nil {
                     if(fbloginresult.grantedPermissions.contains("email"))
                     {
-                       // fbLoginManager.logOut()
+                        // fbLoginManager.logOut()
                     }
                 }
             }
-        }
-    }
-    
-    @objc private func handleNotification() {
-        if (self.delegate != nil) {
-            self.delegate?.loginSuccess(loginViewController: self, loginType: .google)
         }
     }
     

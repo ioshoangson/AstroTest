@@ -64,6 +64,9 @@ class HomeViewController: BaseViewController {
         self.title = NSLocalizedString("HOME", comment: "")
         self.addSortButton()
     }
+    
+    //MARK:
+    //MARK: - Sort
 
     override func sortAction() {
         self.showSortByOption()
