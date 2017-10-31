@@ -1,5 +1,7 @@
 # AstroTest
 
+Quick review with video: https://drive.google.com/file/d/0BwtBQJokiSKdVGNIeWM2T1drNjQ/view?usp=sharing
+
 Project Info
 + Xcode version: 8.3.3
 + Language: Swift 3.0
